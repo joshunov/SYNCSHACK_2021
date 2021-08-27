@@ -32,17 +32,14 @@ class Game:
         name = Player()
         name.name = name
 
-    def create_player_list(self):
-        #FINISH
-        return
 
 class Player:
     def __init__(self):
         self.name = " "
         self.weight = 0
         self.max_bac = 0.05 #<-- determines how drunk ppl will get 0.03-0.05 for safe driving, 0.06-0.1 for impared balance/word slurring, 0.11+ nausea, blurred vision etc
-        self.current_bac = 0
-        self.gender = " " # M or F SAY BIOLOGICAL SEXXX
+        self.max_alcahol = 0.0 #maximum amount of alcahol can be drunk to stay under the max BAC in grams
+        self.gender = " " # M or F Biological Sex
         self.score = 0
         self.is_host = False
     
@@ -54,8 +51,28 @@ class Player:
 
 
     def drink(self):
-        #FINISH
-        return
+        #functoin has no input, but outputs the amount of alcahol in grams that should be drunk
+        """
+        using formula BAC = alcahol consumed in grams/body weight in grams*r *100
+
+        where r = 0.55 for females and 0.68 for males
+        
+        """
+        if self.gender == "M":
+            r = 0.68
+        else:
+            r = 0.55
+
+        self.max_alcahol = self.max_bac*self.weight*r*10
+
+        # player drinks 10% of their max alcahol every drink, hence never drinking 100% of their max alcahol
+        # 10g of alcahol = abt 1 standard drink
+
+        self.max_alcahol = self.max_alcahol*0.9
+        print(f'wow {self.name} has to drink {self.max_alcahol*0.1} grams!')
+
+        #STILL TO DO convert alcahol amounts into 'sip's'
+        return self.max_alcahol*0.1
     
     def introduce(self):
 
@@ -101,11 +118,11 @@ def game_begin():
             continue
         print(f"\n Thanks {i.name}, lets move on")
 
+    print(game1.player_list[0].drink())
+    print(f"max alcahol: {game1.player_list[0].max_alcahol}, "
 
 
-
-
-
+game_begin()
 
 
 
