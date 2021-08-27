@@ -1,1 +1,0 @@
-# SYNCSHACK_2021
