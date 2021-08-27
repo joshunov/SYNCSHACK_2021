@@ -12,10 +12,12 @@ class Game:
 
         #include more game info...
     def leaderboard_print(self):
-        void
+        #FINISH
+        return
     
     def create_player_list(self):
-        void
+        #FINISH
+        return
 
 class Player:
     def __init__(self,Game:Game):
@@ -26,8 +28,11 @@ class Player:
         self.point = 0
     
     def drink(self):
-
+        #FINISH
+        return
+    
+    def introduce(self,)
 
 
 #EVERY GAME FO MUST HAVE STANDARD OUTPUT/INPUT
-#Input will be 
+#Input will be
