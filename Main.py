@@ -25,10 +25,9 @@ class Player:
         self.gender = " " # M or F SAY BIOLOGICAL SEXXX
         self.point = 0
     
-    def drink(self)
+    def drink(self):
 
-adam.drink()
+
 
 #EVERY GAME FO MUST HAVE STANDARD OUTPUT/INPUT
 #Input will be 
-
