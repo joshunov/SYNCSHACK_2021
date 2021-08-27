@@ -30,5 +30,5 @@ class Player:
 adam.drink()
 
 #EVERY GAME FO MUST HAVE STANDARD OUTPUT/INPUT
-#Input will be 
+#Input will be hello my name is adam
 
