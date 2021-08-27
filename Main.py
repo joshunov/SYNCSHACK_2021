@@ -40,24 +40,38 @@ class Player:
     def __init__(self):
         self.name = " "
         self.weight = 0
-        self.bac = 0
+        self.max_bac = 0.05 #<-- determines how drunk ppl will get 0.03-0.05 for safe driving, 0.06-0.1 for impared balance/word slurring, 0.11+ nausea, blurred vision etc
+        self.current_bac = 0
         self.gender = " " # M or F SAY BIOLOGICAL SEXXX
         self.score = 0
         self.is_host = False
     
+    """
+    To Complete:
+    Drink()
+    Introduce() DONE
+    """
+
+
     def drink(self):
         #FINISH
         return
     
-    def introduce(self,):
-        print(f"Lets start with some fun Ice-Breakers, {p1.name} you start!"
-        try:
-            self.weight = int(input("\n\nIf you dont mind me asking, approximately how much do you weigh in Kg: "
-            if self.weight <
-         #FINISH
-        except:
+    def introduce(self):
 
-        return
+        try:
+            self.weight = int(input(f"\n\nIf you dont mind me asking {self.name}, approximately how much do you weigh in Kg: "))
+        except:
+            print("\nSorry, we didnt like that response please try again")
+            return False
+
+        try:
+            self.gender = input(f"\n\nNice {self.name}, now Please enter your bilogical sex, please enter either M or F: ")
+            assert self.gender in ["M","F"]
+            return True
+        except:
+            print("\nSorry, we didnt like that response please try again")
+            return False
 
 #EVERY GAME FO MUST HAVE STANDARD OUTPUT/INPUT
 #Input will be
@@ -66,18 +80,26 @@ class Player:
 
 
 
+
 #Below is a draft of how the game_begin function will be structured:
-game1 = Game()
+def game_begin():
+    game1 = Game()
 
-print("\n\n\t\tsome long involved but funny rulebook/welcome message\n\n")
-n = int(input("please enter the number of players: "))
+    print("\n\n\t\tsome long involved but funny rulebook/welcome message\n\n")
+    n = int(input("please enter the number of players: "))
 
-for player in range(n):
-    curr_name = input(f"\n\tEnter the name of player {player+1}")
-    game1.add_person(curr_name)
+#Loop collecting names of every player
+    for player in range(n):
+        curr_name = input(f"\n\tEnter the name of player {player+1}: ")
+        game1.add_person(curr_name)
 
-for i in game1.player_list:
-    i.introduce()
+#loop collecting more info on each player
+    print(f"\n\nLets start with some fun Ice-Breakers, {game1.player_list[0].name} you start!")
+    for i in game1.player_list:
+        print("\n\n")
+        while i.introduce() == False:
+            continue
+        print(f"\n Thanks {i.name}, lets move on")
 
 
 
