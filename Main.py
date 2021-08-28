@@ -80,12 +80,14 @@ class Game:
         try:
             print("Come on, you saw the list enter one of the numbers!")
             print("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
-            game_num = input()
-            raise TypeError
+            game_num = int(input())
+            if game_num not in [1,2,3,4]:
+                raise TypeError
         except:
             print("Come on, you saw the list enter one of the numbers!")
             print("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
             game_num = input()
+
         if game_num == 1:
             self.run_kings()
         elif game_num == 2:
