@@ -5,6 +5,7 @@ img.show() '''
 import Horse_racing.horse_racing_2 as horse
 import fTheBus_fn as ftb
 import trivia1 as triv
+import kings_cup as king
 import random
 
     
@@ -74,6 +75,7 @@ class Game:
         return
 
     def run_kings(self):
+        king.run_kings(self.player_list)
         return
 
     def choose_game(self):
