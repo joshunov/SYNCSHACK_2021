@@ -212,7 +212,7 @@ class Player:
 def game_begin():
     game1 = Game()
 
-    letter_by_letter("\n\n\t\t\033[92mWelcome to 'insert name here' The safe drinking game for people young and old (but not younger than 18 :)) if you want to have a good time, youve come to the right place. This online drinking game takes information about YOU and works out a safe amount for you to drink, making sure everyone has an enjoyable fun time!\n please follow all of the prompts and values exactly as they are specified, and most importantly enjoy!\033[0m\n\n")
+    letter_by_letter("\n\n\t\t\033[92mWelcome to 'Drinky bill' The safe drinking game for people young and old (but not younger than 18 :)) if you want to have a good time, youve come to the right place. This online drinking game takes information about YOU and works out a safe amount for you to drink, making sure everyone has an enjoyable fun time!\n please follow all of the prompts and values exactly as they are specified, and most importantly enjoy!\033[0m\n\n")
     n = int(input("please enter the number of players: "))
 
 #Loop collecting names of every player
