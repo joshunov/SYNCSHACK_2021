@@ -61,12 +61,12 @@ class Game:
         space = " "
 
         print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
-        print("\t    Position\t\t\t|\t        Name      \t\t|\t     Score")
+        print("\t    Position\t\t\t|\t        Name      \t\t|\t     Drinks")
         print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
         for i in range(len(self.leaderboard)):
             print("-----------------------------------------------------------------------------------------------------------")
             print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
-            print(f"\t\t{str(i+1) + space*(8-len(str(i+1)))}\t\t|\t\t{self.leaderboard[i].name + space*(14-len(self.leaderboard[i].name))}\t\t|\t\t{self.leaderboard[i].score}")
+            print(f"\t\t{str(i+1) + space*(8-len(str(i+1)))}\t\t|\t\t{self.leaderboard[i].name + space*(14-len(self.leaderboard[i].name))}\t\t\t|\t\t{self.leaderboard[i].score}")
             print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
 
     def run_ftb(self):
@@ -87,7 +87,7 @@ class Game:
 
     def choose_game(self):
         try:
-            letter_by_letter("\nWhat game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
+            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n(5) Exit the game :(\n\n\t")
             game_num = int(input())
             if game_num not in [1,2,3,4,5]:
                 raise TypeError
@@ -137,20 +137,32 @@ class Player:
 
         self.max_alcahol = self.max_bac*self.weight*r*10
 
-    def drink(self):
+    def drink(self,num = 1):
         if self.max_alcahol == 0:
             self.calculate_max_alc()
 
-        self.score += 1
+        self.score += num
         # player drinks 10% of their max alcahol every drink, hence never drinking 100% of their max alcahol
         # 10g of alcahol = abt 1 standard drink
 
         #p = percentage of total alcahol drank in every sip
         
-        p = 0.25
+        p = 0.15**num
 
         self.max_alcahol = self.max_alcahol*(1-p)
-        letter_by_letter(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
+        #letter_by_letter(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
+
+        drink_statement = [
+            "Someone's feeling thirsty",
+            f"{self.name} drink has got it's eyes on you",
+            f"{self.name}. Drink. Now",
+            f"RBT means you need a plan B",
+            f"Oh you don't feel like anymore, I don't care HAVE A DRINK",
+            f"Better in your belly than on the floor mate. Maybe skip this one",
+        ]
+
+
+
 
         if self.score == 3:
             if self.gender == 'M':
@@ -158,11 +170,23 @@ class Player:
             else:
                 gen = "girl"        
             letter_by_letter(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one or replace it with water :)")
+        
+        elif self.score > 3:
+            letter_by_letter(f"Your doing well {self.name} but this is your {self.score} drink, maybe we should start to slow it down")
 
-        letter_by_letter(f"Press Enter once your drink is complete, but dont feel bad if you need to skip this one out :)")
+        elif self.max_alcahol < 3:
+            letter_by_letter(f"wow {self.name}, we can tell your reaching your limit, start thinking about slowing down")
+    
+
+        elif self.max_alcahol < 1:
+            letter_by_letter(f"hey there {self.name} we've run the numbers and we think youve hit your limit for tonight, lets stick with water for the rest of the night") 
+        
+        else:
+            letter_by_letter(random.shuffle(drink_statement)[0])
+
+        letter_by_letter(f"Press Enter once you are finished, but dont feel bad if you need to skip this one out :)")
         input()
         print()
-        #STILL TO DO convert alcahol amounts into 'sip's'
         return self.max_alcahol*p
     
     def introduce(self):
@@ -212,7 +236,7 @@ class Player:
 def game_begin():
     game1 = Game()
 
-    letter_by_letter("\n\n\t\t\033[92mWelcome to 'Drinky bill' The safe drinking game for people young and old (but not younger than 18 :)) if you want to have a good time, youve come to the right place. This online drinking game takes information about YOU and works out a safe amount for you to drink, making sure everyone has an enjoyable fun time!\n please follow all of the prompts and values exactly as they are specified, and most importantly enjoy!\033[0m\n\n")
+    letter_by_letter("\n\n\n\n\n\n\n\n\n\n\n\t\t\033[92mWelcome to 'Drinky bill' The safe drinking game for people young and old (but not younger than 18 :)) if you want to have a good time, youve come to the right place. This online drinking game takes information about YOU and works out a safe amount for you to drink, making sure everyone has an enjoyable fun time!\n please follow all of the prompts and values exactly as they are specified, and most importantly enjoy!\033[0m\n\n")
     n = int(input("please enter the number of players: "))
 
 #Loop collecting names of every player
@@ -231,17 +255,13 @@ def game_begin():
             continue
         print(f"\n Thanks {i.name}, lets move on")
 
-    #run horse game
-    #
-
-    #run fthe_bus
+   
     print("\n\n\n\n\n")
-
+    game1.print_scoreboard()
     letter_by_letter("Lets get down to business")
 
     while game1.end == False:
         game1.choose_game()
-        game1.print_scoreboard()
         letter_by_letter("hope you enjoyed that, lets get moving onto the next one")
 
 

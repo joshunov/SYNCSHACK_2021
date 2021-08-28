@@ -134,9 +134,8 @@ def start_trivia(players):
     print()
     print()        
             
-
+    player_num = -1
     for i in selected_questions:
-        player_num = 0
         if player_num == len(players):
             player_num == 0
     
@@ -150,7 +149,7 @@ def start_trivia(players):
         answer = str(input()).upper()
         if answer == quiz[i]["answer"]:
             print()
-            letter_by_letter("Correct Answer!\033[92m")
+            letter_by_letter("Correct Answer!\033[92m\n")
             letter_by_letter('Next Question')
             print()
         else:
@@ -166,7 +165,7 @@ def start_trivia(players):
                 answer_2 = str(input()).upper()
                 if answer_2 == quiz[i]["answer"]:
                     print()
-                    letter_by_letter(f"Correct Answer!, good job {players[player_num].name}\033[95m")
+                    letter_by_letter(f"Correct Answer!, good job {players[player_num].name}\033[95m\n")
                 else:
                     print()
                     letter_by_letter(f'''Incorrect, you have run out of attempts. 
