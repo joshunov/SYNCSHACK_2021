@@ -138,11 +138,11 @@ def start_trivia(players):
     for i in selected_questions:
         attempts = 2
         letter_by_letter(quiz[i]["question"])
-        letter_by_letter(f"Enter your answer {players[player_num].name} Answer: ")
+        letter_by_letter(f"\nEnter your answer {players[player_num].name} Answer: ")
         answer = str(input()).upper()
         if answer == quiz[i]["answer"]:
             print()
-            letter_by_letter("Correct Answer!", '\033[92m')
+            letter_by_letter("Correct Answer!\033[92m")
             letter_by_letter('Next Question')
             print()
         else:
@@ -150,11 +150,11 @@ def start_trivia(players):
             
             if attempts == 1:
                 print()
-                letter_by_letter("Incorrect answer you have 1 more attempt. You're halfway to another drink!", '\033[95m')
+                letter_by_letter("Incorrect answer you have 1 more attempt. You're halfway to another drink!\033[95m")
                 print()
                 # player only drinks after running out of both attempts
                 letter_by_letter(quiz[i]["question"])
-                letter_by_letter(f"Have another go {players[player_num].name} Answer: ")
+                letter_by_letter(f"\nHave another go {players[player_num].name} Answer: ")
                 answer_2 = str(input()).upper()
                 if answer_2 == quiz[i]["answer"]:
                     print()
@@ -163,7 +163,7 @@ def start_trivia(players):
                     print()
                     letter_by_letter(f'''Incorrect, you have run out of attempts. 
     The correct answers was {quiz[i]["answer"]}\n. 
-    Pitiful really. Drink up {players[player_num].name}!''','\033[95m')
+    Pitiful really. Drink up {players[player_num].name}!\033[95m\n''')
                 players[player_num].drink()
                 print()
                 letter_by_letter('Next Question')
@@ -172,7 +172,7 @@ def start_trivia(players):
             elif attempts == 0:
                 print(f'''Incorrect, you have run out of attempts. 
     The correct answers was {quiz[i]["answer"]}. 
-    Pitiful really. Drink up {players[player_num].name}!''','\033[95m')
+    Pitiful really. Drink up {players[player_num].name}!\033[95m''')
                 players[player_num].drink()
     ##################################################### players[player_num].drink ###############################################################
                 print()
