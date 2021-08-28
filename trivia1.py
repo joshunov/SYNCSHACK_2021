@@ -117,8 +117,6 @@ selected_questions = random.sample(question_nums, 10)
 print()
 intro_msg = 'Enjoy your game and drink responsibly.'
 
-score = 0
-
 print(intro_msg)
 
 print()
@@ -131,9 +129,8 @@ for i in selected_questions:
     print(quiz[i]["question"])
     answer = str(input("Enter Answer: ")).upper()
     if answer == quiz[i]["answer"]:
-        score += 1
         print()
-        print(f"Correct Answer! You're score is now {score}")
+        print(f"Correct Answer! You're score is now")
         print('Next Question')
         print()
     else:
@@ -147,14 +144,12 @@ for i in selected_questions:
             print(quiz[i]["question"])
             answer_2 = str(input("Have another go: ")).upper()
             if answer_2 == quiz[i]["answer"]:
-                score += 1
                 print()
-                print(f"Correct Answer! You're score is now {score}")
+                print(f"Correct Answer! You're score is now")
             else:
                 print()
                 print(f'''Incorrect, you have run out of attempts. 
 The correct answers was {quiz[i]["answer"]}. 
-You're score is {score}... 
 Pitiful really. Drink up champ!''')
             print()
             print('Next Question')
@@ -163,13 +158,12 @@ Pitiful really. Drink up champ!''')
         elif attempts == 0:
             print(f'''Incorrect, you have run out of attempts. 
 The correct answers was {quiz[i]["answer"]}. 
-You're score is {score}... 
 Pitiful really. Drink up champ!''')
 ##################################################### players[i].drink ###############################################################
             print()
             print('Next Question')
             print()
 
-output_msg = (f"Well done. You're score is {score}!")
+output_msg = (f"Well done, youve finished the game!")
 print(output_msg)
 
