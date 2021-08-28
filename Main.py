@@ -93,7 +93,7 @@ class Game:
                 raise TypeError
         except:
             letter_by_letter("Come on, you saw the list enter one of the numbers!")
-            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n(5) Exit the game :(\n\n\t")
+            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n\t(5) Exit the game :(\n\n\t")
             game_num = input()
 
         if game_num == 1:
@@ -154,13 +154,13 @@ class Player:
 
         drink_statement = [
             f"{self.name}, Someone's feeling thirsty\n",
-            f"{self.name} drink has got it's eyes on you\n",
+            f"{self.name}, you drink has got it's eyes on you\n",
             f"{self.name}. Drink. Now\n",
             f"{self.name}, RBT means you need a plan B\n",
-            f"Oh {self.name}, you don't feel like anymore, I don't care HAVE A DRINK\n",
-            f"{self.name}, you know its better in your belly than on the floor mate. Maybe skip this one\n",
-            f"{self.name}, keep drinking like that and we will start to call you Drinky Bill\n",
-            f"{self.name}, Drinkey Bill would be proud\n",
+            f"Oh {self.name}, you don't feel it like anymore? I don't care! HAVE A DRINK\n",
+            f"{self.name}, you know it's better in your belly than on the floor mate. Maybe skip this one\n",
+            f"{self.name}, keep drinking like that and we will start to call YOU Drinky Bill\n",
+            f"{self.name}, Drinky Bill would be proud\n",
             f"Take it easy {self.name}\n"
         ]
 
@@ -172,13 +172,13 @@ class Player:
                 gen = "boy"
             else:
                 gen = "girl"        
-            letter_by_letter(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one or replace it with water :)")
+            letter_by_letter(f"Whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one or replace it with water :)")
         
         elif self.score > 3:
-            letter_by_letter(f"Your doing well {self.name} but this is your {self.score} drink, maybe we should start to slow it down")
+            letter_by_letter(f"You're doing well {self.name} but this is your drink No.{self.score}, maybe we should start to slow it down")
 
         elif self.max_alcahol < 3:
-            letter_by_letter(f"wow {self.name}, we can tell your reaching your limit, start thinking about slowing down")
+            letter_by_letter(f"wow {self.name}, we can tell you're reaching your limit, start thinking about slowing down")
     
 
         elif self.max_alcahol < 1:

@@ -28,7 +28,7 @@ def fTheBus(player_list):
 
     for players in range(len(player_list)):
         
-        print(f'\n--- Round {players} of {len(player_list)} complete ---')
+        letter_by_letter(f'\n--- Round {players} of {len(player_list)} complete ---')
         letter_by_letter(f"It is {colored(player_list[players].name, attrs= ['bold'])}\'s turn\n")
         attempt = 1
         while attempt <= 3:
@@ -59,22 +59,22 @@ def fTheBus(player_list):
 
         # while attempt <= 3:
             
-            round_1 = input('Red or Black? ').lower()
+            round_1 = input(letter_by_letter('Red or Black? ')).lower()
             verify = False
 
             while verify == False:
                 if round_1 not in ['red', 'black']:
-                    round_1 = input("please enter either black or red: ").lower()
+                    round_1 = input(letter_by_letter("please enter either black or red: ")).lower()
                 else:
                     break
                     
 
-            letter_by_letter(colored(f'\n----- {card1} -----\n', 'red'))
+            letter_by_letter(colored(f'\n----- {card1} -----\n', 'blue'))
             if round_1 == colour1:
-                letter_by_letter(f'Correct, {player_list[players].name} may give out one drink.')
+                letter_by_letter(colored(f'Correct, {player_list[players].name} may give out one drink.', 'green'))
                 while verify == False:
                     try: 
-                        drink1 = int(input('\nWhich player number is drinking? '))
+                        drink1 = int(input(letter_by_letter('\nWhich player number is drinking? ')))
                         print(' ')
                         player_list[drink1-1].drink()
                         break
@@ -84,7 +84,7 @@ def fTheBus(player_list):
                 
             elif round_1 != colour1:
                 # count += 1
-                print(f'Incorrect, {player_list[players].name} you must drink.')
+                letter_by_letter(colored(f'Incorrect, {player_list[players].name} you must drink.', 'red'))
                 # print('\n--- Round {} of {} complete ---'.format(count, len(player_list)))
                 print(' ')
                 player_list[players].drink()
@@ -110,18 +110,18 @@ def fTheBus(player_list):
 
     #round 2
 
-            round_2 = input('\nHigher or Lower? ').lower()
+            round_2 = input(letter_by_letter('\nHigher or Lower? ')).lower()
 
             while verify == False:
                 if round_2 not in ['higher', 'lower']:
-                        round_2 = input("please enter either higher or lower: ").lower()
+                        round_2 = input(letter_by_letter("please enter either higher or lower: ")).lower()
                 else:
                     break
 
             
-            letter_by_letter(colored((f'\n----- {card2} -----\n')))
+            letter_by_letter(colored(f'\n----- {card2} -----\n', 'blue'))
             if round_2 == 'higher' and int(rank2int) > int(rank1int):
-                print(f'Correct, {player_list[players].name} you may give out one drink.')
+                letter_by_letter(colored(f'Correct, {player_list[players].name} you may give out one drink.', 'green'))
                 while verify == False:
                     try:
                         drink2 = int(input('\nWhich player number is drinking? '))
@@ -129,21 +129,23 @@ def fTheBus(player_list):
                         print(' ')
                         break
                     except:
+                        letter_by_letter(f"Enter a number between 1 and {len(player_list)}")
                         continue
             elif round_2 == 'lower' and int(rank2int) < int(rank1int):
-                print(f'Correct, {player_list[players].name} you may give out one drink.')
+                letter_by_letter(colored(f'Correct, {player_list[players].name} you may give out one drink.', 'green'))
                 while verify == False:
                     try:
-                        drink2 = int(input('\nWhich player number is drinking? '))
+                        drink2 = int(input(letter_by_letter('\nWhich player number is drinking? ')))
                         player_list[drink2-1].drink()
                         print(' ')
                         break
                     except:
+                        letter_by_letter(f"Enter a number between 1 and {len(player_list)}")
                         continue
             else:
                 # count += 1
                 attempt += 1
-                print('Incorrect, you must drink.')
+                letter_by_letter(colored('Incorrect, you must drink.', 'red'))
                 # print(f'\n--- Round {count} of {len(player_list)} complete ---')
                 player_list[players].drink()
                 print(' ')
@@ -173,18 +175,18 @@ def fTheBus(player_list):
                 lowest = int(rank1int)
 
     #Round 3
-            round_3 = input('\nInside or Outside? ').lower()
+            round_3 = input(letter_by_letter('\nInside or Outside? ')).lower()
 
             while verify == False:
                 if round_3 not in ['inside', 'outside']:
-                    round_3 = input("please enter either inside or outside: ").lower()
+                    round_3 = input(letter_by_letter("please enter either inside or outside: ")).lower()
                 else:
                     break
 
 
-            letter_by_letter(colored(f'\n----- {card3} -----\n', 'red'))
+            letter_by_letter(colored(f'\n----- {card3} -----\n', 'blue'))
             if round_3 == 'inside' and int(rank3int) < highest and int(rank3int) > lowest:
-                print(f'Correct, {player_list[players].name} you may give out one drink.')
+                letter_by_letter(colored(f'Correct, {player_list[players].name} you may give out one drink.', 'green'))
                 while verify == False:
                     try:
                         drink3 = int(input('\nWhich player number is drinking? '))
@@ -192,21 +194,23 @@ def fTheBus(player_list):
                         print(' ')
                         break
                     except:
+                        letter_by_letter(f"Enter a number between 1 and {len(player_list)}")
                         continue
             elif round_3 == 'outside' and int(rank3int) > highest or int(rank3int) < lowest:
-                print(f'Correct, {player_list[players].name} you may give out one drink.')
+                letter_by_letter(colored(f'Correct, {player_list[players].name} you may give out one drink.', 'green'))
                 while verify == True:
                     try:
-                        drink3 = int(input('\nWhich player number is drinking? '))
+                        drink3 = int(input(letter_by_letter('\nWhich player number is drinking? ')))
                         player_list[drink3-1].drink()
                         print(' ')
                         break
                     except:
+                        letter_by_letter(f"Enter a number between 1 and {len(player_list)}")
                         continue
             else:
                 # count += 1
                 attempt += 1
-                print(f'Incorrect, {player_list[players].name} you must drink.')
+                letter_by_letter(colored(f'Incorrect, {player_list[players].name} you must drink.', 'red'))
                 # print(f'\n--- Round {count} of {len(player_list)} complete ---')
                 player_list[players].drink()
                 print(' ')
@@ -221,45 +225,48 @@ def fTheBus(player_list):
 
             while verify == False:
                 if round_4 not in ['clubs', 'diamonds', 'hearts', 'spades']:
-                    round_4 = input("please enter either a suit (Clubs, Diamonds, Hearts, Spades): ").lower()
+                    round_4 = input(letter_by_letter(("please enter either a suit (Clubs, Diamonds, Hearts, Spades): "))).lower()
                 else:
                     break
 
-            print(f'\n----- {card4} -----')
+            letter_by_letter(colored(f'\n----- {card4} -----\n', 'blue'))
             suit4 = suit4.lower()
             if round_4 == suit4:
-                print('Correct, you may give out three drinks.')
+                letter_by_letter(colored('Correct, you may give out three drinks.', 'green'))
                 while verify == False:
                     try:
-                        drink4_1 = int(input('\nWhich player will drink first? '))
+                        drink4_1 = int(input(letter_by_letter('\nWhich player will drink first? ')))
                         player_list[drink4_1-1].drink()
                         break
                     except:
+                        letter_by_letter(f"Enter a number between 1 and {len(player_list)}")
                         continue
                 while verify == False:
                     try:
-                        drink4_2 = int(input('\nWhich player will drink second? '))
+                        drink4_2 = int(input(letter_by_letter('\nWhich player will drink second? ')))
                         player_list[drink4_2-1].drink()
                         break
                     except:
+                        letter_by_letter(f"Enter a number between 1 and {len(player_list)}")
                         continue
                 while verify == False:
                     try:
-                        drink4_3 = int(input('\nWhich player will drink third? '))
+                        drink4_3 = int(input(letter_by_letter('\nWhich player will drink third? ')))
                         player_list[drink4_3-1].drink()
                         break
                     except:
+                        letter_by_letter(f"Enter a number between 1 and {len(player_list)}")
                         continue
                 print(' ')
-                print('----- YOU WON! -----')
-                print('--------CONGRATS!!--------')
+                letter_by_letter('----- YOU WON! -----')
+                letter_by_letter('--------CONGRATS!!--------')
                 break
                 # count += 1
                 
             else:
                 count += 1
                 # attempt += 1
-                print('Incorrect, you must drink.')
+                letter_by_letter('Incorrect, you must drink.')
                 # print(f'\n--- Round {count} of {len(player_list)} complete ---')
                 player_list[players].drink()
                 print(' ')
@@ -271,8 +278,8 @@ def fTheBus(player_list):
 
         #  break
 
-    print('------------ GAME OVER -------------')
-    print('--------THANKYOU FOR PLAYING--------')
+    letter_by_letter('------------ GAME OVER -------------')
+    letter_by_letter('--------THANKYOU FOR PLAYING--------')
     return True
 
 
