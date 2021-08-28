@@ -184,7 +184,7 @@ class Player:
         else:
             letter_by_letter(drink_statement[0])
 
-        letter_by_letter(f"Press Enter once you are finished, but dont feel bad if you need to skip this one out :)")
+        letter_by_letter(f" Press Enter once you are finished, but dont feel bad if you need to skip this one out :)")
         input()
         print()
         return self.max_alcahol*p
