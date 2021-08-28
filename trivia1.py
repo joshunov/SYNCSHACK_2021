@@ -137,10 +137,10 @@ def start_trivia(players):
 
     for i in selected_questions:
         player_num = 0
-    if player_num == len(players):
-        player_num == 0
+        if player_num == len(players):
+            player_num == 0
     
-    player_num += 1
+        player_num += 1
 
 
 
@@ -171,16 +171,16 @@ def start_trivia(players):
                     print()
                     letter_by_letter(f'''Incorrect, you have run out of attempts. 
     The correct answers was {quiz[i]["answer"]}\n. 
-    Pitiful really. Drink up {players[player_num].name}!\033[95m\n''')
-                players[player_num].drink()
-                print()
-                letter_by_letter('Next Question')
-                print()
+    Pitiful really. Drink up {players[player_num].name}!\033[95m\n\n''')
+                    players[player_num].drink()
+                    print()
+                    letter_by_letter('Next Question')
+                    print()
 
             elif attempts == 0:
                 print(f'''Incorrect, you have run out of attempts. 
     The correct answers was {quiz[i]["answer"]}. 
-    Pitiful really. Drink up {players[player_num].name}!\033[95m''')
+    Pitiful really. Drink up {players[player_num].name}!\033[95m\n\n''')
                 players[player_num].drink()
     ##################################################### players[player_num].drink ###############################################################
                 print()
