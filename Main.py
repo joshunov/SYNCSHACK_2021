@@ -106,6 +106,7 @@ class Game:
             self.run_ftb()
         elif game_num == 5:
             self.end == True
+            exit()
 
 
 class Player:
