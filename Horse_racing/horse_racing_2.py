@@ -36,6 +36,7 @@ def horse_racing(player):
             print(f"All horses have reached {counter} points. Which horse will fall one point behind?\n")
             reverse = deck.deal(1)
             print(f"{reverse}\n")
+            counter += 1
 
             if reverse.cards[0].suit == "Hearts":
                 racer_dict["Ace of Hearts"] -= 1
