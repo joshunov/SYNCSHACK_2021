@@ -86,8 +86,7 @@ class Game:
 
     def choose_game(self):
         try:
-            letter_by_letter("Come on, you saw the list enter one of the numbers!")
-            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
+            letter_by_letter("\nWhat game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
             game_num = int(input())
             if game_num not in [1,2,3,4]:
                 raise TypeError
@@ -215,13 +214,14 @@ def game_begin():
 
 #Loop collecting names of every player
     for player in range(n):
-        curr_name = input(f"\nEnter the name of player {player+1}: ")
+        letter_by_letter(f"\nEnter the name of player {player+1}: ")
+        curr_name = input()
         curr_name = curr_name.lower().capitalize()
         curr_name =f'\033[1m{curr_name}\033[0m'
         game1.add_person(curr_name)
 
 #loop collecting more info on each player
-    print(f"\nLets start with some fun Ice-Breakers, {game1.player_list[0].name} you start!")
+    letter_by_letter(f"\nLets start with some fun Ice-Breakers, {game1.player_list[0].name} you start!")
     for i in game1.player_list:
         print("\n\n")
         while i.introduce() == False:
