@@ -8,7 +8,6 @@ def letter_by_letter(string):
     return ''
     
 def start_trivia(players):
-    players[0].drink()
     
     quiz = {
         1 : {"question" : "What does 'www' stand for?",
@@ -112,7 +111,11 @@ def start_trivia(players):
         50 : {"question" : "What is the full name of the person who invented the word 'vomit'?",
         "answer" : "WILLIAM SHAKESPEARE"},
     }
+    player_num = 0
+    if player_num == len(players):
+        player_num == 0
     
+    player_num += 1
     question_nums = []
     selected_questions = []
 
@@ -126,7 +129,7 @@ def start_trivia(players):
     print()
     print()
 
-    letter_by_letter('Enjoy your game and drink responsibly.', '\033[36m')
+    letter_by_letter('Enjoy your game and drink responsibly.\033[36m')
 
     print()
     print()        
@@ -135,7 +138,8 @@ def start_trivia(players):
     for i in selected_questions:
         attempts = 2
         letter_by_letter(quiz[i]["question"])
-        answer = str(input("Enter Answer: ")).upper()
+        letter_by_letter(f"Enter your answer {players[player_num].name} Answer: ")
+        answer = str(input()).upper()
         if answer == quiz[i]["answer"]:
             print()
             letter_by_letter("Correct Answer!", '\033[92m')
@@ -150,16 +154,17 @@ def start_trivia(players):
                 print()
                 # player only drinks after running out of both attempts
                 letter_by_letter(quiz[i]["question"])
-                answer_2 = str(input("Have another go: ")).upper()
+                letter_by_letter(f"Have another go {players[player_num].name} Answer: ")
+                answer_2 = str(input()).upper()
                 if answer_2 == quiz[i]["answer"]:
                     print()
-                    letter_by_letter("Correct Answer!", '\033[95m')
+                    letter_by_letter(f"Correct Answer!, good job {players[player_num].name}\033[95m")
                 else:
                     print()
                     letter_by_letter(f'''Incorrect, you have run out of attempts. 
     The correct answers was {quiz[i]["answer"]}\n. 
-    Pitiful really. Drink up champ!''','\033[95m')
-                players[i].drink()
+    Pitiful really. Drink up {players[player_num].name}!''','\033[95m')
+                players[player_num].drink()
                 print()
                 letter_by_letter('Next Question')
                 print()
@@ -167,14 +172,14 @@ def start_trivia(players):
             elif attempts == 0:
                 print(f'''Incorrect, you have run out of attempts. 
     The correct answers was {quiz[i]["answer"]}. 
-    Pitiful really. Drink up champ!''','\033[95m')
-                players[i].drink()
-    ##################################################### players[i].drink ###############################################################
+    Pitiful really. Drink up {players[player_num].name}!''','\033[95m')
+                players[player_num].drink()
+    ##################################################### players[player_num].drink ###############################################################
                 print()
                 letter_by_letter('Next Question')
                 print()
 
-    letter_by_letter("Well done, youve finished the game!",'\033[36m')
+    letter_by_letter("Well done, youve finished the game!\033[36m")
     
     return
 
