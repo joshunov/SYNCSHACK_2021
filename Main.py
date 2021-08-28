@@ -4,6 +4,7 @@ img.show() '''
 
 import Horse_racing.horse_racing_2 as horse
 import fTheBus_fn as ftb
+import trivia1 as triv
 import random
 
     
@@ -65,6 +66,7 @@ class Game:
         return
     
     def run_trivia(self):
+        triv.
         return
 
     def run_horse(self):
@@ -89,12 +91,6 @@ class Player:
         self.suit = ""
 
 
-    """
-    To Complete:
-    Drink() DONE
-    Introduce() DONE
-
-    """
     def calculate_max_alc(self):
         """
         using formula BAC = alcahol consumed in grams/body weight in grams*r *100
@@ -113,15 +109,25 @@ class Player:
         if self.max_alcahol == 0:
             self.calculate_max_alc()
 
+        self.score += 1
         # player drinks 10% of their max alcahol every drink, hence never drinking 100% of their max alcahol
         # 10g of alcahol = abt 1 standard drink
 
         #p = percentage of total alcahol drank in every sip
+        
         p = 0.25
 
         self.max_alcahol = self.max_alcahol*(1-p)
         print(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
 
+        if self.score == 3:
+            if self.gender == 'M':
+                gen = "boy"
+            else:
+                gen = "girl"        
+            print(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one :)")
+
+        input(f"Press Enter once your drink is complete, but dont feel bad if you need to skip this one out :)")
         #STILL TO DO convert alcahol amounts into 'sip's'
         return self.max_alcahol*p
     
