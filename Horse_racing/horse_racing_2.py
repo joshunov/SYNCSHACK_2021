@@ -1,5 +1,4 @@
 import pydealer as cd
-from Horse_racing.horse_functions import *
 from termcolor import colored
 
 
@@ -13,6 +12,21 @@ def horse_racing(player):
     in_play = []
 
     player_num = len(player)
+
+
+    input("dun da da da DAAA!!\n\nWelcome to the Horse Races!\n\nThe rules of this game are very simple: (press ENTER)")
+    print("\n\n---------Game Play-----------")
+    print("\n\n1. You should each place a bet on a suit in a deck of cards: Hearts, Diamonds, Spades, Clubs")
+    print("\n2. The bets will be made in drinks, for example, I could bet 3 drinks (sips) on Hearts")
+    print("\n3. Cards will be dealt from the deck and the suit of the card will determine which horse advances")
+    print("\n4. The track is 8 points long so the horse which first reaches 9 points wins!! (press ENTER)")
+    input("\n5. Each time all the horses have advanced to at least one more point, \na card will be dealt which moves the horse of that suit BACK")
+    print("\n\n--------When to Drink--------")
+    print("\n\n1. If your horse didn't win, you must drink the amount of drinks you \nplaced as a bet (that would mean I drink 3 sips)")
+    input("\n2. Those who bet on the winning horse get to hand out double the ammount \nthey bet on (I could hand out 6 drinks)")
+    input("Happy punting, drink responsibly (press ENTER)\n\n\n")
+
+
 
     for i in range(player_num):
         bold_name = colored(player[i].name, attrs = ['bold'])
