@@ -1,5 +1,6 @@
 import pydealer as cd
 from Main import *
+from horse_functions import *
 
 def horse_racing(players: Game.player_list):
 
@@ -18,7 +19,7 @@ def horse_racing(players: Game.player_list):
 
     counter = 0
 
-    while racer_dict["Ace of Hearts"] < 9 and racer_dict["Ace of Spades"] < 9 and racer_dict["Ace of Diamonds"] < 9 and racer_dict["Ace of Clubs"] < 9:
+    while racer_dict["Ace of Hearts"] < 10 and racer_dict["Ace of Spades"] < 10 and racer_dict["Ace of Diamonds"] < 10 and racer_dict["Ace of Clubs"] < 10:
         card = deck.deal(1)
         print(card)
 
@@ -44,6 +45,18 @@ def horse_racing(players: Game.player_list):
                 racer_dict["Ace of Diamonds"] -= 1
             elif reverse.cards[0].suit == "Clubs":
                 racer_dict["Ace of Clubs"] -= 1
+
+    
+    winning_card = winning_horse(racer_dict)
+
+    winning_players = []
+    for i in range(player_num):
+        if player[i].suit == winning_card:
+            winning_players.append(player[i].name)
+
+    
+
+
         
 
 
