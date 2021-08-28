@@ -118,17 +118,27 @@ def fTheBus(player_list):
                     break
 
             
-            letter_by_letter(colored((f'\n----- {card2} -----'))
+            letter_by_letter(colored((f'\n----- {card2} -----')))
             if round_2 == 'higher' and int(rank2int) > int(rank1int):
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
-                drink2 = int(input('\nWhich player number is drinking? '))
-                player_list[drink2-1].drink()
-                print(' ')
+                while verify == False:
+                    try:
+                        drink2 = int(input('\nWhich player number is drinking? '))
+                        player_list[drink2-1].drink()
+                        print(' ')
+                        break
+                    except:
+                        continue
             elif round_2 == 'lower' and int(rank2int) < int(rank1int):
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
-                drink2 = int(input('\nWhich player number is drinking? '))
-                player_list[drink2-1].drink()
-                print(' ')
+                while verify == False:
+                    try:
+                        drink2 = int(input('\nWhich player number is drinking? '))
+                        player_list[drink2-1].drink()
+                        print(' ')
+                        break
+                    except:
+                        continue
             else:
                 # count += 1
                 attempt += 1
@@ -174,14 +184,24 @@ def fTheBus(player_list):
             print(f'\n----- {card3} -----')
             if round_3 == 'inside' and int(rank3int) < highest and int(rank3int) > lowest:
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
-                drink3 = int(input('\nWhich player number is drinking? '))
-                player_list[drink3-1].drink()
-                print(' ')
+                while verify == False:
+                    try:
+                        drink3 = int(input('\nWhich player number is drinking? '))
+                        player_list[drink3-1].drink()
+                        print(' ')
+                        break
+                    except:
+                        continue
             elif round_3 == 'outside' and int(rank3int) > highest or int(rank3int) < lowest:
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
-                drink3 = int(input('\nWhich player number is drinking? '))
-                player_list[drink3-1].drink()
-                print(' ')
+                while verify == True:
+                    try:
+                        drink3 = int(input('\nWhich player number is drinking? '))
+                        player_list[drink3-1].drink()
+                        print(' ')
+                        break
+                    except:
+                        continue
             else:
                 # count += 1
                 attempt += 1
@@ -208,12 +228,27 @@ def fTheBus(player_list):
             suit4 = suit4.lower()
             if round_4 == suit4:
                 print('Correct, you may give out three drinks.')
-                drink4_1 = int(input('\nWhich player will drink first? '))
-                player_list[drink4_1-1].drink()
-                drink4_2 = int(input('\nWhich player will drink second? '))
-                player_list[drink4_2-1].drink()
-                drink4_3 = int(input('\nWhich player will drink third? '))
-                player_list[drink4_3-1].drink()
+                while verify == False:
+                    try:
+                        drink4_1 = int(input('\nWhich player will drink first? '))
+                        player_list[drink4_1-1].drink()
+                        break
+                    except:
+                        continue
+                while verify == False:
+                    try:
+                        drink4_2 = int(input('\nWhich player will drink second? '))
+                        player_list[drink4_2-1].drink()
+                        break
+                    except:
+                        continue
+                while verify == False:
+                    try:
+                        drink4_3 = int(input('\nWhich player will drink third? '))
+                        player_list[drink4_3-1].drink()
+                        break
+                    except:
+                        continue
                 print(' ')
                 print('----- YOU WON! -----')
                 print('--------CONGRATS!!--------')
