@@ -41,14 +41,24 @@ class Game:
             scores.append(players.score)
         scores = sorted(scores, reverse=True)
 
-        for score in range(scores):
+        for score in scores:
             for player in self.player_list:
-            if player.score == score:
-                self.leaderboard.append()
+                if player.score == score and player not in self.leaderboard:
+                    self.leaderboard.append(player)
+                    break
+            continue
 
-        
-        
-        self.leaderboard
+        print("Alright, lets see how these scores are looking!")
+        space = " "
+
+        print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
+        print("\t    Position\t\t\t|\t        Name      \t\t|\t     Score")
+        print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
+        for i in range(len(self.leaderboard)):
+            print("-----------------------------------------------------------------------------------------------------------")
+            print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
+            print(f"\t\t{str(i+1) + space*(8-len(str(i+1)))}\t\t|\t\t{self.leaderboard[i].name + space*(14-len(self.leaderboard[i].name))}\t\t|\t\t{self.leaderboard[i].score}")
+            print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
 
 class Player:
     def __init__(self):
@@ -63,6 +73,8 @@ class Player:
         #attributes for horse_racing
         self.bet = 0
         self.suit = ""
+
+
     """
     To Complete:
     Drink() DONE
@@ -115,9 +127,6 @@ class Player:
             print("\nSorry, we didnt like that response please try again")
             return False
 
-    def print_scoreboard(self):
-        ordered_scoreboard
-
 
 
 
@@ -150,7 +159,12 @@ def game_begin():
             continue
         print(f"\n Thanks {i.name}, lets move on")
 
+    game1.player_list[0].score = 2
+    game1.player_list[2].score = 2
+    game1.player_list[1].score = 0
+    game1.print_scoreboard()
 
+game_begin()
 
 
 
