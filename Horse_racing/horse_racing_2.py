@@ -68,7 +68,7 @@ def horse_racing(player: Game.player_list):
         
 
 
-    horse_racing()    
+
 
 
     
