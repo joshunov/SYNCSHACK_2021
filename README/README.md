@@ -1,5 +1,7 @@
 # SYNCSHACK_2021
 
+hi my name is adam
+
 Team Lineup:
 
     Joshua Novick
