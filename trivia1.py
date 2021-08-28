@@ -138,8 +138,10 @@ def start_trivia(players):
 
     for i in selected_questions:
         player_num += 1
+
         if player_num == len(players):
-            player_num == 0
+            player_num = 0
+    
     
 
 
