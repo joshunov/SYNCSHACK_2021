@@ -157,7 +157,7 @@ class Player:
                 gen = "boy"
             else:
                 gen = "girl"        
-            letter_by_letter(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one :)")
+            letter_by_letter(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one or replace it with water :)")
 
         letter_by_letter(f"Press Enter once your drink is complete, but dont feel bad if you need to skip this one out :)")
         input()
