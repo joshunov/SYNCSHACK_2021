@@ -75,6 +75,25 @@ class Game:
     def run_kings(self):
         return
 
+    def choose_game(self):
+        try:
+            print("Come on, you saw the list enter one of the numbers!")
+            print("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
+            game_num = input()
+            raise TypeError
+        except:
+            print("Come on, you saw the list enter one of the numbers!")
+            print("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
+            game_num = input()
+        if game_num == 1:
+            self.run_kings()
+        elif game_num == 2:
+            self.run_trivia()
+        elif game_num == 3:
+            self.run_horse()
+        elif game_num == 4:
+            self.run_ftb()
+
 
 class Player:
     def __init__(self):
@@ -128,24 +147,25 @@ class Player:
             print(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one :)")
 
         input(f"Press Enter once your drink is complete, but dont feel bad if you need to skip this one out :)")
+        print()
         #STILL TO DO convert alcahol amounts into 'sip's'
         return self.max_alcahol*p
     
     def introduce(self):
         weight_questions = [
         f"If you dont mind me asking {self.name}, approximately how much do you weigh in Kg: ",
-        f"Heyo {self.name}, spill the beans, how much do you weigh?",
-        f"Whats'up {self.name}, Hope your having a good one, let us know your weight",
-        f"OK {self.name}, you know the deal, How much do you weigh",
-        f"Hello {self.name}, we need to know your weight, promise its for your own benefit :)",
-        f"{self.name} Your looking good tonight, between you and me i recon your gonna win, just tell me your weight so we can get started"
+        f"Heyo {self.name}, spill the beans, how much do you weigh in Kg? ",
+        f"Whats'up {self.name}, Hope your having a good one, let us know your weight in Kg: ",
+        f"OK {self.name}, you know the deal, How much do you weigh in Kg: ",
+        f"Hello {self.name}, we need to know your weight in kg, promise its for your own benefit :): ",
+        f"{self.name} Your looking good tonight, between you and me i recon your gonna win, just tell me your weight in Kg so we can get started: "
         ]
 
         sex_questions = [
-        f"Nice {self.name}, now Please enter your bilogical sex",
-        f"Very interesting, Now lets hear your biological sex",
-        f"You weigh whatttt? Just kidding. One more thing, we need to know your biological sex please",
-        f"Hey {self.name} we need your biological sex, we promise we wont tell anyone"
+        f"Nice {self.name}, now Please enter your bilogical sex: ",
+        f"Very interesting, Now lets hear your biological sex: ",
+        f"You weigh whatttt? Just kidding. One more thing, we need to know your biological sex please: ",
+        f"Hey {self.name} we need your biological sex, we promise we wont tell anyone: "
         ]
 
         random.shuffle(sex_questions)
@@ -195,17 +215,16 @@ def game_begin():
         print(f"\n Thanks {i.name}, lets move on")
 
     #run horse game
-    #horse.horse_racing(game1.player_list)
+    #
 
     #run fthe_bus
     print("\n\n\n\n\n")
-    ftb.fTheBus(game1.player_list)
+
+    game1.choose_game()
 
 
 
 game_begin()
-
-
 
 
 
