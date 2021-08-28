@@ -137,20 +137,20 @@ class Player:
 
         self.max_alcahol = self.max_bac*self.weight*r*10
 
-    def drink(self):
+    def drink(self,num = 1):
         if self.max_alcahol == 0:
             self.calculate_max_alc()
 
-        self.score += 1
+        self.score += num
         # player drinks 10% of their max alcahol every drink, hence never drinking 100% of their max alcahol
         # 10g of alcahol = abt 1 standard drink
 
         #p = percentage of total alcahol drank in every sip
         
-        p = 0.25
+        p = 0.25*num
 
         self.max_alcahol = self.max_alcahol*(1-p)
-        letter_by_letter(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
+        #letter_by_letter(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
 
         if self.score == 3:
             if self.gender == 'M':
@@ -158,6 +158,14 @@ class Player:
             else:
                 gen = "girl"        
             letter_by_letter(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one or replace it with water :)")
+        if self.score > 3:
+            letter_by_letter(f"Your doing well {self.name} but this is your {self.score} drink, maybe we should start to slow it down")
+
+        elif self.max_alcahol < 3:
+            letter_by_letter(f"wow {self.name}, we can tell your reaching your limit, start thinking about slowing down")
+
+        elif self.max_alcahol < 1:
+            letter_by_letter(f"hey there {self.name} we've run the numbers and we think youve hit your limit for tonight, lets stick with water for the rest of the night") 
 
         letter_by_letter(f"Press Enter once your drink is complete, but dont feel bad if you need to skip this one out :)")
         input()
