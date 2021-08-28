@@ -1,5 +1,4 @@
 import pydealer as cd
-from Main import *
 from horse_functions import *
 
 def horse_racing(player: Game.player_list):
