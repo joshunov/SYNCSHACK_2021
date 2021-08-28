@@ -136,6 +136,14 @@ def start_trivia(players):
             
 
     for i in selected_questions:
+        player_num = 0
+    if player_num == len(players):
+        player_num == 0
+    
+    player_num += 1
+
+
+
         attempts = 2
         letter_by_letter(quiz[i]["question"])
         letter_by_letter(f"\nEnter your answer {players[player_num].name} Answer: ")
