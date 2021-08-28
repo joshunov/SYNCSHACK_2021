@@ -151,10 +151,9 @@ class Player:
         random.shuffle(sex_questions)
         random.shuffle(weight_questions)
         
-
         try:
             self.weight = int(input(weight_questions[0]))
-            print("\n)"
+            print("\n")
         except:
             print(f"\nSeriously {self.name}, That is just not a number, Try again")
             return False
