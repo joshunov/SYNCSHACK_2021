@@ -147,10 +147,22 @@ class Player:
 
         #p = percentage of total alcahol drank in every sip
         
-        p = 0.25*num
+        p = 0.15**num
 
         self.max_alcahol = self.max_alcahol*(1-p)
         #letter_by_letter(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
+
+        drink_statement = [
+            "Someone's feeling thirsty",
+            f"{self.name} drink has got it's eyes on you",
+            f"{self.name}. Drink. Now",
+            f"RBT means you need a plan B",
+            f"Oh you don't feel like anymore, I don't care HAVE A DRINK",
+            f"Better in your belly than on the floor mate. Maybe skip this one",
+        ]
+
+
+
 
         if self.score == 3:
             if self.gender == 'M':
@@ -158,19 +170,23 @@ class Player:
             else:
                 gen = "girl"        
             letter_by_letter(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one or replace it with water :)")
-        if self.score > 3:
+        
+        elif self.score > 3:
             letter_by_letter(f"Your doing well {self.name} but this is your {self.score} drink, maybe we should start to slow it down")
 
         elif self.max_alcahol < 3:
             letter_by_letter(f"wow {self.name}, we can tell your reaching your limit, start thinking about slowing down")
+    
 
         elif self.max_alcahol < 1:
             letter_by_letter(f"hey there {self.name} we've run the numbers and we think youve hit your limit for tonight, lets stick with water for the rest of the night") 
+        
+        else:
+            letter_by_letter(random.shuffle(drink_statement)[0])
 
-        letter_by_letter(f"Press Enter once your drink is complete, but dont feel bad if you need to skip this one out :)")
+        letter_by_letter(f"Press Enter once you are finished, but dont feel bad if you need to skip this one out :)")
         input()
         print()
-        #STILL TO DO convert alcahol amounts into 'sip's'
         return self.max_alcahol*p
     
     def introduce(self):
