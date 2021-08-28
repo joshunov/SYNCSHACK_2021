@@ -9,7 +9,14 @@ Team Lineup:
     Hamish Vass
     Rishi Deshpande
 
-*the game drinkey bill requires the installation of two additional python librarys 
+
+The game drinkey bill requires the installation of two additional python librarys termcolor and pydealer, although these are automatically installed for the user when the game is run.
+
+There is no external rule book on how to play the game, it is designed to be played with no-prior knowledge, although it is designed to prompt the player on what do do and how to play as the game progresses.
+
+The game is reccomended to be played with 2-8 players although it can handle any amount of players.
+
+
 
 What problem are we trying to solve?
 Right now, the world is more isolated and alone then it ever has been. To this date is has been 21 months since this pandemic began. That’s 638 days. Of that a vast majority has been spent in door lock inside your own home. In the four weeks leading up to the 25th of April 2021 alone, there were 82,000 calls to lifeline and 22,000 calls to Beyond Blue. This is unacceptable and we wanted to do something about it.
