@@ -60,6 +60,20 @@ class Game:
             print(f"\t\t{str(i+1) + space*(8-len(str(i+1)))}\t\t|\t\t{self.leaderboard[i].name + space*(14-len(self.leaderboard[i].name))}\t\t|\t\t{self.leaderboard[i].score}")
             print("\t\t        \t\t|\t\t              \t\t|\t\t     ")
 
+    def run_ftb(self):
+        ftb.fTheBus(self.player_list)
+        return
+    
+    def run_trivia(self):
+        return
+
+    def run_horse(self):
+        return
+
+    def run_kings(self):
+        return
+
+
 class Player:
     def __init__(self):
         self.name = " "
@@ -122,26 +136,23 @@ class Player:
         ]
 
         sex_questions = [
-        f"Nice {self.name}, now Please enter your bilogical sex, please enter either M or F: ",
+        f"Nice {self.name}, now Please enter your bilogical sex",
         f"Very interesting, Now lets hear your biological sex",
         f"You weigh whatttt? Just kidding. One more thing, we need to know your biological sex please",
-        f"Hey {self.name} we need your biological sex, we promise we wont tell anyone",
-        f"",
-        f"",
-        f"",
+        f"Hey {self.name} we need your biological sex, we promise we wont tell anyone"
         ]
 
-
-
-
+        random.shuffle(sex_questions)
         random.shuffle(weight_questions)
         
 
         try:
-            self.weight = int(input(f"If you dont mind me asking {self.name}, approximately how much do you weigh in Kg: "))
+            self.weight = int(input(weight_questions[0]))
+            print("\n)"
         except:
             print(f"\nSeriously {self.name}, That is just not a number, Try again")
             return False
+            
 
         try:
             print(sex_questions[0])
