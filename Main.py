@@ -161,7 +161,7 @@ class Player:
             f"Better in your belly than on the floor mate. Maybe skip this one",
         ]
 
-        drink_statement = random.shuffle(drink_statement)
+        random.shuffle(drink_statement)
 
 
         if self.score == 3:
