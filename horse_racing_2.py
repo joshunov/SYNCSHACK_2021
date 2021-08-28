@@ -2,18 +2,18 @@ import pydealer as cd
 from Main import *
 from horse_functions import *
 
-def horse_racing(players: Game.player_list):
+def horse_racing(player: Game.player_list):
 
     deck = cd.Deck(rebuild=True, re_shuffle=True)
     deck.shuffle()
     RACERS = ["Ace of Hearts", "Ace of Diamonds", "Ace of Spades", "Ace of Clubs"]
     deck.get_list(RACERS)
 
-    player_num = len(players)
+    player_num = len(player)
 
     for i in range(player_num):
-        player[i].bet = input(f"{player[i].name}, how many drinks would you like to bet?\n")
-        player[i].suit = input("On which suit?\n")
+        player[i].bet = int(input(f"{player[i].name}, how many drinks would you like to bet?\n"))
+        player[i].suit = input("On which suit?\n").lower().capitalize()
 
     racer_dict = {"Ace of Hearts": 0, "Ace of Diamonds": 0, "Ace of Spades": 0, "Ace of Clubs": 0}
 
@@ -54,10 +54,22 @@ def horse_racing(players: Game.player_list):
         if player[i].suit == winning_card:
             winning_players.append(player[i].name)
 
-    
+    print("Congratumalations to the winners:")
+    for name in winning_players:
+        print(f"{name}\n")
 
-
+    print("Now for all you losers who don't know how to punt, lets see how much you have to drink:\n")
+    for i in range(player_num):
+        if player[i].name in winning_players:
+            print(f"{player[i].name}, you get to dish out {player[i].bet * 2} sips! Good job\n")
+        else:
+            print(f"{player[i].name}, you gotta pick up your game. Drink {player[i].bet} sips\n")
+            for j in range(player[i].bet):
+                player[i].drink()
         
+
+
+    horse_racing()    
 
 
     
