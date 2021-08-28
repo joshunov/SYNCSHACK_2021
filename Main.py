@@ -68,11 +68,11 @@ class Player:
         # player drinks 10% of their max alcahol every drink, hence never drinking 100% of their max alcahol
         # 10g of alcahol = abt 1 standard drink
 
-        self.max_alcahol = self.max_alcahol*0.9
-        print(f'wow {self.name} has to drink {self.max_alcahol*0.1} grams!')
+        self.max_alcahol = self.max_alcahol*0.75
+        print(f'wow {self.name} has to drink {self.max_alcahol*0.25} grams!')
 
         #STILL TO DO convert alcahol amounts into 'sip's'
-        return self.max_alcahol*0.1
+        return self.max_alcahol*0.25
     
     def introduce(self):
 
@@ -119,7 +119,7 @@ def game_begin():
         print(f"\n Thanks {i.name}, lets move on")
 
     print(game1.player_list[0].drink())
-    print(f"max alcahol: {game1.player_list[0].max_alcahol}, "
+    print(f"max alcahol: {game1.player_list[0].max_alcahol} ")
 
 
 game_begin()
