@@ -1,9 +1,8 @@
 import random
 
-
-
 def start_trivia(players):
-
+    players[0].drink()
+    
     quiz = {
         1 : {"question" : "What does 'www' stand for?",
         "answer" : "WORLD WIDE WEB"},
@@ -118,22 +117,21 @@ def start_trivia(players):
     # through lines 107 - 113 above, the specified number of questions are randomly selected and randomly ordered from the bank
 
     print()
-    intro_msg = 'Enjoy your game and drink responsibly.'
+    print()
 
-    print(intro_msg)
+    print('Enjoy your game and drink responsibly.', '\033[36m')
 
     print()
     print()        
             
 
-    "Incorrect, answer you have no more attempts. You're halfway to another drink"
     for i in selected_questions:
         attempts = 2
         print(quiz[i]["question"])
         answer = str(input("Enter Answer: ")).upper()
         if answer == quiz[i]["answer"]:
             print()
-            print(f"Correct Answer!")
+            print("Correct Answer!", '\033[92m')
             print('Next Question')
             print()
         else:
@@ -141,19 +139,20 @@ def start_trivia(players):
             
             if attempts == 1:
                 print()
-                print(f"Incorrect answer you have 1 more attempt. You're halfway to another drink!")
+                print("Incorrect answer you have 1 more attempt. You're halfway to another drink!", '\033[95m')
                 print()
                 # player only drinks after running out of both attempts
                 print(quiz[i]["question"])
                 answer_2 = str(input("Have another go: ")).upper()
                 if answer_2 == quiz[i]["answer"]:
                     print()
-                    print(f"Correct Answer!")
+                    print("Correct Answer!", '\033[95m')
                 else:
                     print()
                     print(f'''Incorrect, you have run out of attempts. 
-    The correct answers was {quiz[i]["answer"]}. 
-    Pitiful really. Drink up champ!''')
+    The correct answers was {quiz[i]["answer"]}\n. 
+    Pitiful really. Drink up champ!''','\033[95m')
+                players[i].drink()
                 print()
                 print('Next Question')
                 print()
@@ -161,14 +160,14 @@ def start_trivia(players):
             elif attempts == 0:
                 print(f'''Incorrect, you have run out of attempts. 
     The correct answers was {quiz[i]["answer"]}. 
-    Pitiful really. Drink up champ!''')
+    Pitiful really. Drink up champ!''','\033[95m')
                 players[i].drink()
     ##################################################### players[i].drink ###############################################################
                 print()
                 print('Next Question')
                 print()
 
-    output_msg = (f"Well done, youve finished the game!")
-    print(output_msg)
+    print("Well done, youve finished the game!",'\033[36m')
+    
     return
 
