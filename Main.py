@@ -161,7 +161,7 @@ class Player:
             f"Better in your belly than on the floor mate. Maybe skip this one",
         ]
 
-
+        drink_statement = random.shuffle(drink_statement)
 
 
         if self.score == 3:
@@ -182,7 +182,7 @@ class Player:
             letter_by_letter(f"hey there {self.name} we've run the numbers and we think youve hit your limit for tonight, lets stick with water for the rest of the night") 
         
         else:
-            letter_by_letter(random.shuffle(drink_statement)[0])
+            letter_by_letter(drink_statement[0])
 
         letter_by_letter(f"Press Enter once you are finished, but dont feel bad if you need to skip this one out :)")
         input()
