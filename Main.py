@@ -12,7 +12,7 @@ import time
 def letter_by_letter(string):
     for i in string:
         print(i, end= (''), flush= True)
-        time.sleep(0.035)
+        time.sleep(0.025)
     return ''
     
 class Game:
@@ -20,6 +20,7 @@ class Game:
         self.leaderboard = []
         self.player_list = []
         self.player_num = 0
+        self.end = False
 
         #include more game info...
     def add_person(self,name):
@@ -88,11 +89,11 @@ class Game:
         try:
             letter_by_letter("\nWhat game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
             game_num = int(input())
-            if game_num not in [1,2,3,4]:
+            if game_num not in [1,2,3,4,5]:
                 raise TypeError
         except:
             letter_by_letter("Come on, you saw the list enter one of the numbers!")
-            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
+            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n(5) Exit the game :(\n\n\t")
             game_num = input()
 
         if game_num == 1:
@@ -103,6 +104,8 @@ class Game:
             self.run_horse()
         elif game_num == 4:
             self.run_ftb()
+        elif game_num == 5:
+            self.end == True
 
 
 class Player:
@@ -236,7 +239,7 @@ def game_begin():
 
     letter_by_letter("Lets get down to business")
 
-    for i in range(4):
+    while game1.end == False:
         game1.choose_game()
         game1.print_scoreboard()
         letter_by_letter("hope you enjoyed that, lets get moving onto the next one")
