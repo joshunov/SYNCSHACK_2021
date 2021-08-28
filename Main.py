@@ -111,20 +111,43 @@ class Player:
         return self.max_alcahol*p
     
     def introduce(self):
+        weight_questions = [
+        f"If you dont mind me asking {self.name}, approximately how much do you weigh in Kg: ",
+        f"Heyo {self.name}, spill the beans, how much do you weigh?",
+        f"Whats'up {self.name}, Hope your having a good one, let us know your weight",
+        f"OK {self.name}, you know the deal, How much do you weigh",
+        f"Hello {self.name}, we need to know your weight, promise its for your own benefit :)",
+        f"{self.name} Your looking good tonight, between you and me i recon your gonna win, just tell me your weight so we can get started"
+        ]
 
+        sex_questions = [
+        f"Nice {self.name}, now Please enter your bilogical sex, please enter either M or F: ",
+        f"Very interesting, Now lets hear your biological sex",
+        f"You weigh whatttt? Just kidding. One more thing, we need to know your biological sex please",
+        f"",
+        f"",
+        f"",
+        f"",
+        
+
+
+
+
+        random.shuffle(weight_questions)
 
         try:
-            self.weight = int(input(f"\n\nIf you dont mind me asking {self.name}, approximately how much do you weigh in Kg: "))
+            self.weight = int(input(f"If you dont mind me asking {self.name}, approximately how much do you weigh in Kg: "))
         except:
-            print("\nSorry, we didnt like that response please try again")
+            print(f"\nSeriously {self.name}, That is just not a number, Try again")
             return False
 
         try:
-            self.gender = input(f"\n\nNice {self.name}, now Please enter your bilogical sex, please enter either M or F: ")
+            print(sex_questions[0])
+            self.gender = input("please enter either M or F: ")
             assert self.gender in ["M","F"]
             return True
         except:
-            print("\nSorry, we didnt like that response please try again")
+            print(f"\nCome on either M or F, enter either M or F, dont make me angry")
             return False
 
 
@@ -148,21 +171,22 @@ def game_begin():
 
 #Loop collecting names of every player
     for player in range(n):
-        curr_name = input(f"\n\tEnter the name of player {player+1}: ")
+        curr_name = input(f"\nEnter the name of player {player+1}: ")
         game1.add_person(curr_name)
 
 #loop collecting more info on each player
-    print(f"\n\nLets start with some fun Ice-Breakers, {game1.player_list[0].name} you start!")
+    print(f"\nLets start with some fun Ice-Breakers, {game1.player_list[0].name} you start!")
     for i in game1.player_list:
         print("\n\n")
         while i.introduce() == False:
             continue
         print(f"\n Thanks {i.name}, lets move on")
 
-    game1.player_list[0].score = 2
-    game1.player_list[2].score = 2
-    game1.player_list[1].score = 0
-    game1.print_scoreboard()
+
+
+
+
+
 
 game_begin()
 
