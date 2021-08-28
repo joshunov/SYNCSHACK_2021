@@ -6,8 +6,11 @@ class Player:
         self.drinks = 0
         self.suit = "Diamonds"
 
-    def bet(self):
-        
+    def create(self):
+        self.name = input("What is your name? ")
+        self.drinks = input("How many drinks would you like to bet? ")
+        self.suit = input("On which suit? ")
+
         
 
 deck = cd.Deck(rebuild = True, re_shuffle = True)
@@ -28,9 +31,6 @@ print("Each time all the horses have advanced to a at least one more point, a ca
 print("Happy punting, drink responsibly")
 
 num_play = int(input("How many players? "))
-
-player = Bet.name.input("player name")
-print(mark.name)
 
 
 # players = {}
