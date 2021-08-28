@@ -15,6 +15,7 @@ class Game:
 
         #include more game info...
     def add_person(self,name):
+
         #Creating the object of 10 players to be assigned to each person playing the game, capping the maximum number of players at 10 but can be extended
 
         p1,p2,p3,p4,p5,p6,p7,p8,p9,p10 = Player(),Player(),Player(),Player(),Player(),Player(),Player(),Player(),Player(),Player()
@@ -32,6 +33,22 @@ class Game:
         name = Player()
         name.name = name
 
+    def print_scoreboard(self):
+
+        scores = []
+
+        for players in self.player_list:
+            scores.append(players.score)
+        scores = sorted(scores, reverse=True)
+
+        for score in range(scores):
+            for player in self.player_list:
+            if player.score == score:
+                self.leaderboard.append()
+
+        
+        
+        self.leaderboard
 
 class Player:
     def __init__(self):
@@ -45,8 +62,9 @@ class Player:
     
     """
     To Complete:
-    Drink()
+    Drink() DONE
     Introduce() DONE
+
     """
 
 
@@ -68,13 +86,17 @@ class Player:
         # player drinks 10% of their max alcahol every drink, hence never drinking 100% of their max alcahol
         # 10g of alcahol = abt 1 standard drink
 
-        self.max_alcahol = self.max_alcahol*0.75
-        print(f'wow {self.name} has to drink {self.max_alcahol*0.25} grams!')
+        #p = percentage of total alcahol drank in every sip
+        p = 0.25
+
+        self.max_alcahol = self.max_alcahol*(1-p)
+        print(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
 
         #STILL TO DO convert alcahol amounts into 'sip's'
-        return self.max_alcahol*0.25
+        return self.max_alcahol*p
     
     def introduce(self):
+
 
         try:
             self.weight = int(input(f"\n\nIf you dont mind me asking {self.name}, approximately how much do you weigh in Kg: "))
@@ -89,6 +111,13 @@ class Player:
         except:
             print("\nSorry, we didnt like that response please try again")
             return False
+
+    def print_scoreboard(self):
+        ordered_scoreboard
+
+
+
+
 
 #EVERY GAME FO MUST HAVE STANDARD OUTPUT/INPUT
 #Input will be
@@ -117,14 +146,6 @@ def game_begin():
         while i.introduce() == False:
             continue
         print(f"\n Thanks {i.name}, lets move on")
-
-    print(game1.player_list[0].drink())
-    print(f"max alcahol: {game1.player_list[0].max_alcahol} ")
-
-
-game_begin()
-
-
 
 
 
