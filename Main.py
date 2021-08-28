@@ -83,10 +83,7 @@ class Player:
     Introduce() DONE
 
     """
-    def
-
-    def drink(self):
-        #functoin has no input, but outputs the amount of alcahol in grams that should be drunk
+    def calculate_max_alc(self):
         """
         using formula BAC = alcahol consumed in grams/body weight in grams*r *100
 
@@ -99,6 +96,10 @@ class Player:
             r = 0.55
 
         self.max_alcahol = self.max_bac*self.weight*r*10
+
+    def drink(self):
+        if self.max_alcahol == 0:
+            self.calculate_max_alc()
 
         # player drinks 10% of their max alcahol every drink, hence never drinking 100% of their max alcahol
         # 10g of alcahol = abt 1 standard drink
