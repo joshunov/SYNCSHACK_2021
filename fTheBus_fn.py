@@ -1,12 +1,11 @@
-from main import *
 import random
 
-def fTheBus(Game.player_list):
+def fTheBus(player_list):
     count = 0
 
     print('\nThe order of players is as follows:')
-    for i in range(len(Game.player_list)):
-        print('{}. '.format(i+1) + Game.player_list[i])
+    for i in range(len(player_list)):
+        print('{}. '.format(i+1) + player_list[i])
 
     print('\n------GAME RULES------')
     print('1. If you make a correct guess in Rounds 1 - 3, you may give a drink to someone else.')
@@ -18,7 +17,7 @@ def fTheBus(Game.player_list):
     print('Note: Spelling must be correct, however, answeres are not case sensitive.')
     print(' ')
 
-    for players in range(len(Game.player_list)):
+    for players in range(len(player_list)):
         
         rank1 = random.choice(('A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'))
         rank1int = 0
@@ -52,7 +51,7 @@ def fTheBus(Game.player_list):
         elif round_1 != colour1:
             count += 1
             print('Incorrect, you must drink.')
-            print('\n--- Round {} of {} complete ---'.format(count, len(Game.player_list)))
+            print('\n--- Round {} of {} complete ---'.format(count, len(player_list)))
             print(' ')
             #player[players].drink()
             continue
@@ -91,7 +90,7 @@ def fTheBus(Game.player_list):
         else:
             count += 1
             print('Incorrect, you must drink.')
-            print('\n--- Round {} of {} complete ---'.format(count, len(Game.player_list)))
+            print('\n--- Round {} of {} complete ---'.format(count, len(player_list)))
             #player[players].drink()
             print(' ')
             continue
@@ -134,7 +133,7 @@ def fTheBus(Game.player_list):
         else:
             count += 1
             print('Incorrect, you must drink.')
-            print('\n--- Round {} of {} complete ---'.format(count, len(Game.player_list)))
+            print('\n--- Round {} of {} complete ---'.format(count, len(player_list)))
             #player[players].drink()
             print(' ')
             continue
@@ -158,11 +157,11 @@ def fTheBus(Game.player_list):
             print('----- YOU WON! -----')
             print('--------THANKYOU FOR PLAYING--------')
             count += 1
-            print('--- Round {} of {} complete ---'.format(count, len(Game.player_list)))
+            print('--- Round {} of {} complete ---'.format(count, len(player_list)))
         else:
             count += 1
             print('Incorrect, you must drink.')
-            print('\n--- Round {} of {} complete ---'.format(count, len(Game.player_list)))
+            print('\n--- Round {} of {} complete ---'.format(count, len(player_list)))
             #player[players].drink()
             print(' ')
             continue
