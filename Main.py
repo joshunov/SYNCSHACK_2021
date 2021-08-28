@@ -202,7 +202,11 @@ class Player:
 def game_begin():
     game1 = Game()
 
-    print("\n\n\t\tsome long involved but funny rulebook/welcome message\n\n")
+    print("\n\n\t\t
+    
+    some long involved but funny rulebook/welcome message
+    
+    \n\n")
     n = int(input("please enter the number of players: "))
 
 #Loop collecting names of every player
