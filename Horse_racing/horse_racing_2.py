@@ -75,7 +75,7 @@ def horse_racing(player):
 
     while racer_dict[f"Ace of {in_play[0]}"] < 9 and racer_dict[f"Ace of {in_play[1]}"] < 9 and racer_dict[f"Ace of {in_play[-2]}"] < 9 and racer_dict[f"Ace of {in_play[-1]}"] < 9:
         card = deck.deal(1)
-        print(colored(f"{card}\n", 'green', attrs = ['bold']))
+        letter_by_letter(colored(f"{card}\n", 'green', attrs = ['bold']))
 
         if card.cards[0].suit == "Hearts":
             racer_dict["Ace of Hearts"] += 1
@@ -105,7 +105,7 @@ def horse_racing(player):
             counter += 1
             input(letter_by_letter(f"All horses have reached {counter} points. Which horse will fall one point behind? (press ENTER)\n"))
             reverse = deck.deal(1)
-            print(colored(f"{reverse}\n", 'red', attrs= ['bold']))
+            letter_by_letter(colored(f"{reverse}\n", 'red', attrs= ['bold']))
         
 
             if reverse.cards[0].suit == "Hearts":
