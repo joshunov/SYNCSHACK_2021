@@ -3,6 +3,7 @@ img = Image.open('/Users/joshuanovick/Desktop/Screenshot.png')
 img.show() '''
 
 import Horse_racing.horse_racing_2 as horse
+import fTheBus_fn as ftb
 
 #each game chooses how drinks are dished out, every game has an output 
 
@@ -147,6 +148,7 @@ class Player:
         try:
             print(sex_questions[0])
             self.gender = input("please enter either M or F: ")
+            self.gender = self.gender.upper()
             assert self.gender in ["M","F"]
             return True
         except:
@@ -178,7 +180,10 @@ def game_begin():
         print(f"\n Thanks {i.name}, lets move on")
 
     #run horse game
-    horse.horse_racing(game1.player_list)
+    #horse.horse_racing(game1.player_list)
+
+    #run fthe_bus
+
 
 
 
