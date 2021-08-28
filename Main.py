@@ -226,7 +226,12 @@ def game_begin():
     #run fthe_bus
     print("\n\n\n\n\n")
 
-    game1.choose_game()
+    print("Lets get down to business")
+
+    for i in range(4):
+        game1.choose_game()
+        game1.print_scoreboard()
+        print("hope you enjoyed that, lets get moving onto the next one")
 
 
 
