@@ -28,34 +28,37 @@ def fTheBus(player_list):
 
     for players in range(len(player_list)):
         
+        print(f'\n--- Round {players} of {len(player_list)} complete ---')
         letter_by_letter(f"It is {colored(player_list[players].name, attrs= ['bold'])}\'s turn\n")
+        attempt = 1
+        while attempt <= 3:
+            rank1 = random.choice(('A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'))
+            rank1int = 0
+            if rank1 == 'A' or rank1 == 'J' or rank1 == 'Q' or rank1 == 'K':
+                if rank1 == 'A':
+                    rank1int = 1
+                elif rank1 == 'J':
+                    rank1int = 11
+                elif rank1 == 'Q':
+                    rank1int = 12
+                elif rank1 == 'K':
+                    rank1int = 13
+            else:
+                rank1int = rank1
 
-        rank1 = random.choice(('A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'))
-        rank1int = 0
-        if rank1 == 'A' or rank1 == 'J' or rank1 == 'Q' or rank1 == 'K':
-            if rank1 == 'A':
-                rank1int = 1
-            elif rank1 == 'J':
-                rank1int = 11
-            elif rank1 == 'Q':
-                rank1int = 12
-            elif rank1 == 'K':
-                rank1int = 13
-        else:
-            rank1int = rank1
-
-        suit1 = random.choice(('Clubs', 'Diamonds', 'Hearts', 'Spades'))
-        colour1 = 'white'
-        if suit1 == 'Clubs' or suit1 == 'Spades':
-            colour1 = 'black'
-        elif suit1 == 'Hearts' or suit1 == 'Diamonds':
-            colour1 = 'red'
-        card1 = rank1 + ' of ' + suit1
+            suit1 = random.choice(('Clubs', 'Diamonds', 'Hearts', 'Spades'))
+            colour1 = 'white'
+            if suit1 == 'Clubs' or suit1 == 'Spades':
+                colour1 = 'black'
+            elif suit1 == 'Hearts' or suit1 == 'Diamonds':
+                colour1 = 'red'
+            card1 = rank1 + ' of ' + suit1
 
 #round 1
-        attempt = 1
+        # attempt = 1
 
-        while attempt <= 3:
+        # while attempt <= 3:
+            
             round_1 = input('Red or Black? ').lower()
             verify = False
 
@@ -74,7 +77,7 @@ def fTheBus(player_list):
                 player_list[drink1-1].drink()
             elif round_1 != colour1:
                 # count += 1
-                print(f'Incorrect,{player_list[players].name} you must drink.')
+                print(f'Incorrect, {player_list[players].name} you must drink.')
                 # print('\n--- Round {} of {} complete ---'.format(count, len(player_list)))
                 print(' ')
                 player_list[players].drink()
@@ -113,12 +116,12 @@ def fTheBus(player_list):
             if round_2 == 'higher' and int(rank2int) > int(rank1int):
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
                 drink2 = int(input('\nWhich player number is drinking? '))
-                player_list[drink2].drink()
+                player_list[drink2-1].drink()
                 print(' ')
             elif round_2 == 'lower' and int(rank2int) < int(rank1int):
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
                 drink2 = int(input('\nWhich player number is drinking? '))
-                player_list[drink2].drink()
+                player_list[drink2-1].drink()
                 print(' ')
             else:
                 # count += 1
@@ -166,12 +169,12 @@ def fTheBus(player_list):
             if round_3 == 'inside' and int(rank3int) < highest and int(rank3int) > lowest:
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
                 drink3 = int(input('\nWhich player number is drinking? '))
-                drink2[drink3].drink()
+                player_list[drink3-1].drink()
                 print(' ')
             elif round_3 == 'outside' and int(rank3int) > highest or int(rank3int) < lowest:
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
                 drink3 = int(input('\nWhich player number is drinking? '))
-                player_list[drink3].drink()
+                player_list[drink3-1].drink()
                 print(' ')
             else:
                 # count += 1
@@ -200,11 +203,11 @@ def fTheBus(player_list):
             if round_4 == suit4:
                 print('Correct, you may give out three drinks.')
                 drink4_1 = int(input('\nWhich player will drink first? '))
-                player_list[drink4_1].drink()
+                player_list[drink4_1-1].drink()
                 drink4_2 = int(input('\nWhich player will drink second? '))
-                player_list[drink4_2].drink()
+                player_list[drink4_2-1].drink()
                 drink4_3 = int(input('\nWhich player will drink third? '))
-                player_list[drink4_3].drink()
+                player_list[drink4_3-1].drink()
                 print(' ')
                 print('----- YOU WON! -----')
                 print('--------THANKYOU FOR PLAYING--------')
@@ -219,11 +222,11 @@ def fTheBus(player_list):
                 print(' ')
                 continue
 
-        count += 1
-        print(f'\n--- Round {count} of {len(player_list)} complete ---')
+        # count += 1
+        # print(f'\n--- Round {count} of {len(player_list)} complete ---')
 
 
-        break
+        #  break
 
     print('------------ GAME OVER -------------')
     print('--------THANKYOU FOR PLAYING--------')
