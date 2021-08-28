@@ -2,6 +2,8 @@
 img = Image.open('/Users/joshuanovick/Desktop/Screenshot.png')
 img.show() '''
 
+from horse_racing_2.py import *
+
 #each game chooses how drinks are dished out, every game has an output 
 
 import random
