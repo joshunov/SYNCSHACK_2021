@@ -152,6 +152,7 @@ class Player:
         return self.max_alcahol*p
     
     def introduce(self):
+
         weight_questions = [
         f"If you dont mind me asking {self.name}, approximately how much do you weigh in Kg: ",
         f"Heyo {self.name}, spill the beans, how much do you weigh in Kg? ",
