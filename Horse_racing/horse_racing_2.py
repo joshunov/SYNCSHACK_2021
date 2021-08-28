@@ -1,7 +1,8 @@
 import pydealer as cd
-from horse_functions import *
+from Horse_racing.horse_functions import *
 
-def horse_racing(player: Game.player_list):
+
+def horse_racing(player):
 
     deck = cd.Deck(rebuild=True, re_shuffle=True)
     deck.shuffle()
