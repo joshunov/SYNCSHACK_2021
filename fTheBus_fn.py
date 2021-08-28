@@ -69,7 +69,7 @@ def fTheBus(player_list):
                     break
                     
 
-            letter_by_letter(f'\n----- {card1} -----\n')
+            letter_by_letter(colored(f'\n----- {card1} -----\n', 'red'))
             if round_1 == colour1:
                 letter_by_letter(f'Correct, {player_list[players].name} may give out one drink.')
                 drink1 = int(input('\nWhich player number is drinking? '))
@@ -112,7 +112,7 @@ def fTheBus(player_list):
                     break
 
             
-            print(f'\n----- {card2} -----')
+            letter_by_letter(colored((f'\n----- {card2} -----'))
             if round_2 == 'higher' and int(rank2int) > int(rank1int):
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
                 drink2 = int(input('\nWhich player number is drinking? '))
@@ -210,9 +210,10 @@ def fTheBus(player_list):
                 player_list[drink4_3-1].drink()
                 print(' ')
                 print('----- YOU WON! -----')
-                print('--------THANKYOU FOR PLAYING--------')
+                print('--------CONGRATS!!--------')
+                break
                 # count += 1
-                print('--- Round {} of {} complete ---'.format(count, len(player_list)))
+                
             else:
                 count += 1
                 # attempt += 1
