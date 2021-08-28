@@ -25,7 +25,7 @@ def horse_racing(player):
     letter_by_letter("\n\n1. You should each place a bet on a suit in a deck of cards: Hearts, Diamonds, Spades, Clubs")
     letter_by_letter("\n2. The bets will be made in drinks, for example, I could bet 3 drinks (sips) on Hearts")
     letter_by_letter("\n3. Cards will be dealt from the deck and the suit of the card will determine which horse advances")
-    letter_by_letter("\n4. The track is 8 points long so the horse which first reaches 9 points wins!!")
+    letter_by_letter("\n4. The track is 9 points long so the horse which first reaches 10 points wins!!")
     input(letter_by_letter("\n5. Each time all the horses have advanced to at least one more point, \na card will be dealt which moves the horse of that suit BACK (press ENTER)"))
     letter_by_letter("\n\n--------When to Drink--------")
     letter_by_letter("\n\n1. If your horse didn't win, you must drink the amount of drinks you \nplaced as a bet (that would mean I drink 3 sips)")
@@ -75,7 +75,7 @@ def horse_racing(player):
 
     while racer_dict[f"Ace of {in_play[0]}"] < 9 and racer_dict[f"Ace of {in_play[1]}"] < 9 and racer_dict[f"Ace of {in_play[-2]}"] < 9 and racer_dict[f"Ace of {in_play[-1]}"] < 9:
         card = deck.deal(1)
-        letter_by_letter(colored(f"{card}\n", 'green', attrs = ['bold']))
+        letter_by_letter(colored(f"{card}\n\n", 'green', attrs = ['bold']))
 
         if card.cards[0].suit == "Hearts":
             racer_dict["Ace of Hearts"] += 1
@@ -89,7 +89,9 @@ def horse_racing(player):
 
         for i in range(10):
             col = 0
+            print(9 - i, end= '')
             for key in racer_dict.keys():
+                
                 if racer_dict[key] == 9 - i:
                     print(f"|{SUITS[col]}|", end = "")
                 else:
@@ -118,6 +120,7 @@ def horse_racing(player):
                 racer_dict["Ace of Clubs"] -= 1
 
             for i in range(10):
+                print(9 -i, end= '')
                 col = 0
                 for key in racer_dict.keys():
                     if racer_dict[key] == 9 - i:
