@@ -167,6 +167,7 @@ def game_begin():
     for player in range(n):
         curr_name = input(f"\nEnter the name of player {player+1}: ")
         curr_name = curr_name.lower().capitalize()
+        curr_name =f'\033[1m{curr_name}\033[0m'
         game1.add_person(curr_name)
 
 #loop collecting more info on each player
@@ -181,6 +182,8 @@ def game_begin():
     #horse.horse_racing(game1.player_list)
 
     #run fthe_bus
+    print("\n\n\n\n\n")
+    ftb.fTheBus(game1.player_list)
 
 
 
