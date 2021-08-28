@@ -160,8 +160,8 @@ class Player:
             f"Oh {self.name}, you don't feel like anymore, I don't care HAVE A DRINK\n",
             f"{self.name}, you know its better in your belly than on the floor mate. Maybe skip this one\n",
             f"{self.name}, keep drinking like that and we will start to call you Drinky Bill\n",
-            f"{self.name}, Drinkey Bill would be proud",
-            f"Take it easy {self.name}"
+            f"{self.name}, Drinkey Bill would be proud\n",
+            f"Take it easy {self.name}\n"
         ]
 
         random.shuffle(drink_statement)
