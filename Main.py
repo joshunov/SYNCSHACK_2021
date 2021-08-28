@@ -188,7 +188,7 @@ class Player:
             self.weight = int(input())
             print("\n")
         except:
-            letter_by_letter(f"\nSeriously {self.name}, That is just not a number, Try again")
+            letter_by_letter(f"\nSeriously {self.name}, That is just not a number, Try again\n")
             return False
             
 
