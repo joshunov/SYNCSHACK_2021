@@ -265,7 +265,7 @@ def game_begin():
 
     while game1.end == False:
         game1.choose_game()
-        letter_by_letter("hope you enjoyed that, lets get moving onto the next one")
+        letter_by_letter("\nhope you enjoyed that, lets get moving onto the next one. ")
 
 
 game_begin()
