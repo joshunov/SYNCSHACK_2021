@@ -1,15 +1,14 @@
 # SYNCSHACK_2021
 
-hi my name is adam
-
 Team Lineup:
 
-    Joshua Novick
-    Cameron Mitchell
-    Adam Riesel
-    Jordan Guyot
-    Hamish Vass
     Rishi Deshpande
+    Jordan Guyot
+    Cameron Mitchell
+    Joshua Novick
+    Adam Riesel
+    Hamish Vass
+    
 
 
 The game drinkey bill requires the installation of two additional python librarys termcolor and pydealer, although these are automatically installed for the user when the game is run.
