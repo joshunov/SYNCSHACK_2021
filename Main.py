@@ -128,7 +128,7 @@ class Player:
         f"",
         f"",
         f"",
-        
+        ]
 
 
 
@@ -172,6 +172,7 @@ def game_begin():
 #Loop collecting names of every player
     for player in range(n):
         curr_name = input(f"\nEnter the name of player {player+1}: ")
+        curr_name = curr_name.lower().capitalize()
         game1.add_person(curr_name)
 
 #loop collecting more info on each player
