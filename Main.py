@@ -60,6 +60,9 @@ class Player:
         self.score = 0
         self.is_host = False
     
+        #attributes for horse_racing
+        self.bet = 0
+        self.suit = ""
     """
     To Complete:
     Drink() DONE
