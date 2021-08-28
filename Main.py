@@ -4,6 +4,7 @@ img.show() '''
 
 import Horse_racing.horse_racing_2 as horse
 import fTheBus_fn as ftb
+import kings_cup as kc
 import random
 
     
@@ -71,7 +72,7 @@ class Game:
         return
 
     def run_kings(self):
-        return
+        kc.run_kings(self)
 
 
 class Player:
@@ -148,7 +149,7 @@ class Player:
 
         try:
             self.weight = int(input(weight_questions[0]))
-            print("\n)"
+            print("\n")
         except:
             print(f"\nSeriously {self.name}, That is just not a number, Try again")
             return False
@@ -192,9 +193,9 @@ def game_begin():
     #run horse game
     #horse.horse_racing(game1.player_list)
 
-    #run fthe_bus
+    #run kings cup
     print("\n\n\n\n\n")
-    ftb.fTheBus(game1.player_list)
+    kc.run_kings(game1.player_list)
 
 
 
