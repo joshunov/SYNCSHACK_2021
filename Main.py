@@ -1,13 +1,13 @@
-'''from PIL import Image                                                                                
-img = Image.open('/Users/joshuanovick/Desktop/Screenshot.png')
-img.show() '''
-
 import Horse_racing.horse_racing_2 as horse
 import fTheBus_fn as ftb
 import trivia1 as triv
 import kings_cup as king
 import random
 import time
+import os
+
+os.system("pip install pydealer")
+os.system("pip install termcolor")
 
 def letter_by_letter(string):
     for i in string:
@@ -268,29 +268,4 @@ def game_begin():
         letter_by_letter("hope you enjoyed that, lets get moving onto the next one")
 
 
-
 game_begin()
-
-
-#sample game function:
-
-'''
-def game_sample(players: Game.player_list):
-    #players will be a list from the Game class looking like [p1,p2,p3,...,pn] with each element of the list having all the player attributes
-    #this list will be the standard input of each game function.
-
-
-    #say player 3 has to drink
-    players[2].drink()
-
-    #or you want player 1's name
-    players[2].name
-
-    #if player 4 gets a point
-    players[3].score += 1
-
-    #also each player will have an is_host attribute incase your game needs that, say player 1 is the host, players[0].is_host == True
-
-    #functions dont really need to return anything, just rater update each players attributes along the way
-    return
-'''
