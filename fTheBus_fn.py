@@ -79,6 +79,7 @@ def fTheBus(player_list):
                         player_list[drink1-1].drink()
                         break
                     except:
+                        letter_by_letter(f"C'mon, enter a number between 1 and {len(player_list)}")
                         continue
                 
             elif round_1 != colour1:
@@ -118,7 +119,7 @@ def fTheBus(player_list):
                     break
 
             
-            letter_by_letter(colored((f'\n----- {card2} -----')))
+            letter_by_letter(colored((f'\n----- {card2} -----\n')))
             if round_2 == 'higher' and int(rank2int) > int(rank1int):
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
                 while verify == False:
@@ -181,7 +182,7 @@ def fTheBus(player_list):
                     break
 
 
-            print(f'\n----- {card3} -----')
+            letter_by_letter(colored(f'\n----- {card3} -----\n', 'red'))
             if round_3 == 'inside' and int(rank3int) < highest and int(rank3int) > lowest:
                 print(f'Correct, {player_list[players].name} you may give out one drink.')
                 while verify == False:
