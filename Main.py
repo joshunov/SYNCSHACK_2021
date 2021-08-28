@@ -86,14 +86,14 @@ class Game:
 
     def choose_game(self):
         try:
-            print("Come on, you saw the list enter one of the numbers!")
-            print("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
+            letter_by_letter("Come on, you saw the list enter one of the numbers!")
+            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
             game_num = int(input())
             if game_num not in [1,2,3,4]:
                 raise TypeError
         except:
-            print("Come on, you saw the list enter one of the numbers!")
-            print("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
+            letter_by_letter("Come on, you saw the list enter one of the numbers!")
+            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n")
             game_num = input()
 
         if game_num == 1:
@@ -148,16 +148,17 @@ class Player:
         p = 0.25
 
         self.max_alcahol = self.max_alcahol*(1-p)
-        print(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
+        letter_by_letter(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
 
         if self.score == 3:
             if self.gender == 'M':
                 gen = "boy"
             else:
                 gen = "girl"        
-            print(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one :)")
+            letter_by_letter(f"whoa there cow{gen} this is your third drink, dont feel bad if you wanna skip this one :)")
 
-        input(f"Press Enter once your drink is complete, but dont feel bad if you need to skip this one out :)")
+        letter_by_letter(f"Press Enter once your drink is complete, but dont feel bad if you need to skip this one out :)")
+        input()
         print()
         #STILL TO DO convert alcahol amounts into 'sip's'
         return self.max_alcahol*p
@@ -184,15 +185,16 @@ class Player:
         random.shuffle(weight_questions)
         
         try:
-            self.weight = int(input(weight_questions[0]))
+            letter_by_letter(weight_questions[0])
+            self.weight = int(input())
             print("\n")
         except:
-            print(f"\nSeriously {self.name}, That is just not a number, Try again")
+            letter_by_letter(f"\nSeriously {self.name}, That is just not a number, Try again")
             return False
             
 
         try:
-            print(sex_questions[0])
+            letter_by_letter(sex_questions[0])
             self.gender = input("please enter either M or F: ")
             self.gender = self.gender.upper()
             assert self.gender in ["M","F"]
@@ -232,12 +234,12 @@ def game_begin():
     #run fthe_bus
     print("\n\n\n\n\n")
 
-    print("Lets get down to business")
+    letter_by_letter("Lets get down to business")
 
     for i in range(4):
         game1.choose_game()
         game1.print_scoreboard()
-        print("hope you enjoyed that, lets get moving onto the next one")
+        letter_by_letter("hope you enjoyed that, lets get moving onto the next one")
 
 
 
