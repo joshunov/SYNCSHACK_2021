@@ -1,5 +1,6 @@
 import random
 import time
+from termcolor import colored
 
 
 def letter_by_letter(string):
@@ -11,9 +12,9 @@ def letter_by_letter(string):
 def fTheBus(player_list):
     count = 0
 
-    letter_by_letter('\nThe order of players is as follows:')
+    letter_by_letter('\nThe order of players is as follows:\n')
     for i in range(len(player_list)):
-        print('{}. '.format(i+1) + player_list[i].name)
+        print(f'{i+1}. {player_list[i].name} ')
 
     letter_by_letter('\n------GAME RULES------\n')
     letter_by_letter('1. If you make a correct guess in Rounds 1 - 3, you may give a drink to someone else.\n')
@@ -27,6 +28,8 @@ def fTheBus(player_list):
 
     for players in range(len(player_list)):
         
+        letter_by_letter(f"It is {colored(player_list[players].name, attrs= ['bold'])}\'s turn\n")
+
         rank1 = random.choice(('A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'))
         rank1int = 0
         if rank1 == 'A' or rank1 == 'J' or rank1 == 'Q' or rank1 == 'K':
@@ -68,7 +71,7 @@ def fTheBus(player_list):
                 letter_by_letter(f'Correct, {player_list[players].name} may give out one drink.')
                 drink1 = int(input('\nWhich player number is drinking? '))
                 print(' ')
-                player_list[drink1].drink()
+                player_list[drink1-1].drink()
             elif round_1 != colour1:
                 # count += 1
                 print(f'Incorrect,{player_list[players].name} you must drink.')
