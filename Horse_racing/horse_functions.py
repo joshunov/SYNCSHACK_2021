@@ -3,4 +3,4 @@ def winning_horse(dict):
         if dict[key] == 9:
             winner = key
     
-    return winner
+        return winner
