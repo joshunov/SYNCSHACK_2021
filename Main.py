@@ -4,9 +4,6 @@ img.show() '''
 
 import Horse_racing.horse_racing_2 as horse
 import fTheBus_fn as ftb
-
-#each game chooses how drinks are dished out, every game has an output 
-
 import random
 
     
@@ -128,7 +125,7 @@ class Player:
         f"Nice {self.name}, now Please enter your bilogical sex, please enter either M or F: ",
         f"Very interesting, Now lets hear your biological sex",
         f"You weigh whatttt? Just kidding. One more thing, we need to know your biological sex please",
-        f"",
+        f"Hey {self.name} we need your biological sex, we promise we wont tell anyone",
         f"",
         f"",
         f"",
@@ -138,6 +135,7 @@ class Player:
 
 
         random.shuffle(weight_questions)
+        
 
         try:
             self.weight = int(input(f"If you dont mind me asking {self.name}, approximately how much do you weigh in Kg: "))
@@ -183,10 +181,6 @@ def game_begin():
     #horse.horse_racing(game1.player_list)
 
     #run fthe_bus
-
-
-
-
 
 
 
