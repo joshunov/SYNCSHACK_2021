@@ -1,5 +1,4 @@
 import pydealer as cd
-from Horse_racing.horse_functions import *
 from termcolor import colored
 
 
