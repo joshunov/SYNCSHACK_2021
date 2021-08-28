@@ -48,7 +48,10 @@ def horse_racing(player):
                 racer_dict["Ace of Clubs"] -= 1
 
     
-    winning_card = winning_horse(racer_dict)
+    for key in racer_dict.keys():
+        if racer_dict[key] == 9:
+            winning_card = key
+
 
     winning_players = []
     for i in range(player_num):
