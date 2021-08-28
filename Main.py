@@ -153,12 +153,12 @@ class Player:
         #letter_by_letter(f'wow {self.name} has to drink {self.max_alcahol*p} grams!')
 
         drink_statement = [
-            "Someone's feeling thirsty",
-            f"{self.name} drink has got it's eyes on you",
-            f"{self.name}. Drink. Now",
-            f"RBT means you need a plan B",
-            f"Oh you don't feel like anymore, I don't care HAVE A DRINK",
-            f"Better in your belly than on the floor mate. Maybe skip this one",
+            "Someone's feeling thirsty\n",
+            f"{self.name} drink has got it's eyes on you\n",
+            f"{self.name}. Drink. Now\n",
+            f"RBT means you need a plan B\n",
+            f"Oh you don't feel like anymore, I don't care HAVE A DRINK\n",
+            f"Better in your belly than on the floor mate. Maybe skip this one\n",
         ]
 
         random.shuffle(drink_statement)
