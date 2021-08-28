@@ -70,6 +70,7 @@ class Game:
         return
 
     def run_horse(self):
+        horse.horse_racing(self.player_list)
         return
 
     def run_kings(self):
