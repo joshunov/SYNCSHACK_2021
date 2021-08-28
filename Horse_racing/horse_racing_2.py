@@ -77,7 +77,7 @@ def horse_racing(player):
                 col += 1   
             print("\n")
         
-        print("\n\n\n")
+        print("\n\n")
         input("Press ENTER to turn the next card.")
         print("\n\n")
 
