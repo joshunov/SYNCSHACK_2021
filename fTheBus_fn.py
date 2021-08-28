@@ -72,17 +72,15 @@ def fTheBus(player_list):
             letter_by_letter(colored(f'\n----- {card1} -----\n', 'red'))
             if round_1 == colour1:
                 letter_by_letter(f'Correct, {player_list[players].name} may give out one drink.')
-                try:
-                    drink1 = int(input('\nWhich player number is drinking? '))
-                    print(' ')
-                    player_list[drink1-1].drink()
-                except:
-                    while verify == False:
-                        drink1 = int(input(f"Enter a number between 1 and {len(player_list)}"))
-                        if drink1 < len(player_list):
-                            break
-                        else:
-                            continue
+                while verify == False:
+                    try: 
+                        drink1 = int(input('\nWhich player number is drinking? '))
+                        print(' ')
+                        player_list[drink1-1].drink()
+                        break
+                    except:
+                        continue
+                
             elif round_1 != colour1:
                 # count += 1
                 print(f'Incorrect, {player_list[players].name} you must drink.')
