@@ -2,7 +2,7 @@
 img = Image.open('/Users/joshuanovick/Desktop/Screenshot.png')
 img.show() '''
 
-from horse_racing_2.py import *
+import Horse_racing.horse_racing_2 as horse
 
 #each game chooses how drinks are dished out, every game has an output 
 
@@ -83,7 +83,7 @@ class Player:
     Introduce() DONE
 
     """
-
+    def
 
     def drink(self):
         #functoin has no input, but outputs the amount of alcahol in grams that should be drunk
@@ -155,15 +155,6 @@ class Player:
 
 
 
-
-#EVERY GAME FO MUST HAVE STANDARD OUTPUT/INPUT
-#Input will be
-
-#n = number of players insert later
-
-
-
-
 #Below is a draft of how the game_begin function will be structured:
 def game_begin():
     game1 = Game()
@@ -185,6 +176,8 @@ def game_begin():
             continue
         print(f"\n Thanks {i.name}, lets move on")
 
+    #run horse game
+    horse.horse_racing(game1.player_list)
 
 
 
