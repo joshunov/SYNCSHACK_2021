@@ -119,11 +119,7 @@ def fTheBus(player_list):
                     break
 
             
-<<<<<<< Updated upstream
             letter_by_letter(colored(f'\n----- {card2} -----\n', 'blue'))
-=======
-            letter_by_letter(colored((f'\n----- {card2} -----\n')))
->>>>>>> Stashed changes
             if round_2 == 'higher' and int(rank2int) > int(rank1int):
                 letter_by_letter(colored(f'Correct, {player_list[players].name} you may give out one drink.', 'green'))
                 while verify == False:
@@ -188,11 +184,7 @@ def fTheBus(player_list):
                     break
 
 
-<<<<<<< Updated upstream
             letter_by_letter(colored(f'\n----- {card3} -----\n', 'blue'))
-=======
-            letter_by_letter(colored(f'\n----- {card3} -----\n', 'red'))
->>>>>>> Stashed changes
             if round_3 == 'inside' and int(rank3int) < highest and int(rank3int) > lowest:
                 letter_by_letter(colored(f'Correct, {player_list[players].name} you may give out one drink.', 'green'))
                 while verify == False:
