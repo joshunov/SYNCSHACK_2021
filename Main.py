@@ -87,7 +87,7 @@ class Game:
 
     def choose_game(self):
         try:
-            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n(5) Exit the game :(\n\n\t")
+            letter_by_letter("What game would you like to play?\n\n\n\t(1) Kings Cup\n\n\t(2) Trivia\n\n\t(3) Horse racing\n\n\t(4) Ride the bus\n\n\t(5) Exit the game :(\n\n\t")
             game_num = int(input())
             if game_num not in [1,2,3,4,5]:
                 raise TypeError
