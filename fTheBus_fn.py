@@ -269,6 +269,7 @@ def fTheBus(player_list):
                 letter_by_letter('Incorrect, you must drink.')
                 # print(f'\n--- Round {count} of {len(player_list)} complete ---')
                 player_list[players].drink()
+                attempt += 1
                 print(' ')
                 continue
 
