@@ -47,3 +47,4 @@ Despite Drinkey Bill being initially targeted towards those in lockdown, the fut
 
 
 The Drinkey Bill team have considered Australian responsible service of alcahol laws in the production of the game and promote the safe, responsible use of alcahol for all.
+
