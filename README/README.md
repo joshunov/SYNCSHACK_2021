@@ -49,3 +49,6 @@ Overtime, we will allow for community collaboration, whereby the community aroun
 As lockdowns come to an end, we additionally would like to create a phone app so that users can easily use our platform on the go. This can be additionally implemented using AWS services so that it integrates with our online web-app.
 
 Despite Drinkey Bill being initially targeted towards those in lockdown, the future of Drinkey Bill is still promising. When the time comes we are allowed to visit other people houses Drinkey Bill can be used as a substitute if there are no cards available or people don’t know the rules. Additionally we will continue to add more games and improve the front end coding in order to further enhance the appeal of Drinkey Bill
+
+
+The Drinkey Bill team have considered Australian responsible service of alcahol laws in the production of the game and promote the safe, responsible use of alcahol for all
