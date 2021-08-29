@@ -46,7 +46,7 @@ Ideally, we will be able to integrate AI and Machine Learning into the architect
 Overtime, we will allow for community collaboration, whereby the community around the app will be able to develop and publish games, which can be played and rated by the community to allow for new content to constantly be cycled through.
 As lockdowns come to an end, we additionally would like to create a phone app so that users can easily use our platform on the go. This can be additionally implemented using AWS services so that it integrates with our online web-app.
 
-Despite Drinky Bill being initially targeted towards those in lockdown, the future of Drinky Bill is still promising. When the time comes we are allowed to visit other people houses Drinky Bill can be used as a substitute if there are no cards available or people don’t know the rules. Additionally we will continue to add more games and improve the front end coding in order to further enhance the appeal of Drinky Bill
+Despite Drinky Bill being initially targeted towards those in lockdown, the future of Drinky Bill is still promising. When the time comes we are allowed to visit other people houses Drinky Bill can be used as a substitute if there are no cards available or people don’t know the rules. Additionally we will continue to add more games and improve the front end coding in order to further enhance the appeal of Drinky Bill.
 
 
 The Drinky Bill team have considered Australian responsible service of alcohol laws in the production of the game and promote the safe, responsible use of alcohol for all.
