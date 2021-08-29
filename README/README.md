@@ -11,7 +11,7 @@ Joshua Novick | Mechatronic
 Adam Riesel | Mechatronic
 Hamish Vass | Biomedical
     
-    
+
 
 
 ## Synopsis ##
@@ -20,6 +20,9 @@ The game *Drinkey Bill* requires the installation of two additional python libra
 There is no external rule book on how to play the game. It is designed to be played with no prior knowledge, and to prompt the player on what do do and how to play as the game progresses.
 
 The game is recommended to be played with 2-8 players although it can handle any amount of players.
+
+## Operating ##
+Navigate to the `Main.py` file and run in terminal. All necessary modules will be installed to your local machine, and the algorithm will look after making sure the user experience is smoothe and enjoyable.
 
 
 
@@ -46,4 +49,8 @@ As lockdowns come to an end, we additionally would like to create a phone app so
 Despite Drinky Bill being initially targeted towards those in lockdown, the future of Drinky Bill is still promising. When the time comes we are allowed to visit other people houses Drinky Bill can be used as a substitute if there are no cards available or people don’t know the rules. Additionally we will continue to add more games and improve the front end coding in order to further enhance the appeal of Drinky Bill
 
 
+<<<<<<< Updated upstream
 The Drinky Bill team have considered Australian responsible service of alcahol laws in the production of the game and promote the safe, responsible use of alcahol for all.
+=======
+The Drinkey Bill team have considered Australian responsible service of alcohol laws in the production of the game and promote the safe, responsible use of alcohol for all.
+>>>>>>> Stashed changes
