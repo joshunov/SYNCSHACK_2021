@@ -2,13 +2,6 @@
 
 ## Team Lineup: ##
 
-* Rishi Deshpande
-* Jordan Guyot
-* Cameron Mitchell
-* Joshua Novick
-* Adam Riesel
-* Hamish Vass
-
 Team Member | Engineering Major
 ------------ | -------------
 Rishi Deshpande | Biomedical
@@ -18,8 +11,10 @@ Joshua Novick | Mechatronic
 Adam Riesel | Mechatronic
 Hamish Vass | Biomedical
     
+    
 
 
+## Synopsis ##
 The game *Drinkey Bill* requires the installation of two additional python librarys `termcolor` and `pydealer` - these are automatically installed for the user when the game is run.
 
 There is no external rule book on how to play the game. It is designed to be played with no prior knowledge, and to prompt the player on what do do and how to play as the game progresses.
