@@ -1,15 +1,14 @@
 # SYNCSHACK_2021
 
-hi my name is adam
+Team Lineup:
 
-## Team Lineup: ##
-
-    Joshua Novick
-    Cameron Mitchell
-    Adam Riesel
-    Jordan Guyot
-    Hamish Vass
     Rishi Deshpande
+    Jordan Guyot
+    Cameron Mitchell
+    Joshua Novick
+    Adam Riesel
+    Hamish Vass
+    
 
 
 The game *Drinkey Bill* requires the installation of two additional python librarys `termcolor` and `pydealer` - these are automatically installed for the user when the game is run.
@@ -40,5 +39,4 @@ Ideally, we will be able to integrate AI and Machine Learning into the architect
 Overtime, we will allow for community collaboration, whereby the community around the app will be able to develop and publish games, which can be played and rated by the community to allow for new content to constantly be cycled through.
 As lockdowns come to an end, we additionally would like to create a phone app so that users can easily use our platform on the go. This can be additionally implemented using AWS services so that it integrates with our online web-app.
 
-https://aws.amazon.com/startups/start-building/how-to-build-a-mobile-app/ 
 Despite Drinkey Bill being initially targeted towards those in lockdown, the future of Drinkey Bill is still promising. When the time comes we are allowed to visit other people houses Drinkey Bill can be used as a substitute if there are no cards available or people don’t know the rules. Additionally we will continue to add more games and improve the front end coding in order to further enhance the appeal of Drinkey Bill
