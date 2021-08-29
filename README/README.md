@@ -4,7 +4,7 @@
 
 Team Member | Engineering Major
 ------------ | -------------
-Rishi Deshpande | Mechantronic
+Rishi Deshpande | Mechatronic
 Jordan Guyot | Mechatronic
 Cameron Mitchel | Mechanical
 Joshua Novick | Mechatronic
