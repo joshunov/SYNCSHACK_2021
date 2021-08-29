@@ -1,13 +1,22 @@
 # SYNCSHACK_2021
 
-Team Lineup:
+## Team Lineup: ##
 
-    Rishi Deshpande
-    Jordan Guyot
-    Cameron Mitchell
-    Joshua Novick
-    Adam Riesel
-    Hamish Vass
+* Rishi Deshpande
+* Jordan Guyot
+* Cameron Mitchell
+* Joshua Novick
+* Adam Riesel
+* Hamish Vass
+
+Team Member | Engineering Major
+------------ | -------------
+Rishi Deshpande | Biomedical
+Jordan Guyot | Mechatronic
+Cameron Mitchel | Mechanical
+Joshua Novick | Mechatronic
+Adam Riesel | Mechatronic
+Hamish Vass | Biomedical
     
 
 
